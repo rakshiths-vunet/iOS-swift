@@ -1,3 +1,4 @@
+#if os(iOS)
 import Foundation
 
 // MARK: - EventLogger
@@ -62,3 +63,5 @@ final class EventLogger {
         }
     }
 }
+
+#endif

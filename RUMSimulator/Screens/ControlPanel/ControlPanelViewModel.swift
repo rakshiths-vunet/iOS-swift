@@ -1,3 +1,4 @@
+#if os(iOS)
 import Foundation
 import Combine
 
@@ -26,12 +27,12 @@ final class ControlPanelViewModel: ObservableObject {
 
     // MARK: - Engine reference
 
-    private let engine: EngineStateLegacy
+    private let engine: EngineState
     private var cancellables: Set<AnyCancellable> = []
 
     // MARK: - Init
 
-    init(engineState: EngineStateLegacy) {
+    init(engineState: EngineState) {
         self.engine = engineState
         bind()
     }
@@ -39,16 +40,18 @@ final class ControlPanelViewModel: ObservableObject {
     // MARK: - Binding
 
     private func bind() {
-        engine.$isRunning.receive(on: DispatchQueue.main).assign(to: &$isRunning)
-        engine.$stepIndex.receive(on: DispatchQueue.main).assign(to: &$stepIndex)
-        engine.$totalSteps.receive(on: DispatchQueue.main).assign(to: &$totalSteps)
-        engine.$eventsPerSecond.receive(on: DispatchQueue.main).assign(to: &$eventsPerSecond)
-        engine.$lastStepLabel.receive(on: DispatchQueue.main).assign(to: &$lastStepLabel)
-        engine.$mode.receive(on: DispatchQueue.main).assign(to: &$mode)
+        engine.$isRunning.receive(on: DispatchQueue.main).sink { [weak self] in self?.isRunning = $0 }.store(in: &cancellables)
+        engine.$stepIndex.receive(on: DispatchQueue.main).sink { [weak self] in self?.stepIndex = $0 }.store(in: &cancellables)
+        engine.$totalSteps.receive(on: DispatchQueue.main).sink { [weak self] in self?.totalSteps = $0 }.store(in: &cancellables)
+        engine.$eventsPerSecond.receive(on: DispatchQueue.main).sink { [weak self] in self?.eventsPerSecond = $0 }.store(in: &cancellables)
+        engine.$lastStepLabel.receive(on: DispatchQueue.main).sink { [weak self] in self?.lastStepLabel = $0 }.store(in: &cancellables)
+        engine.$mode.receive(on: DispatchQueue.main).sink { [weak self] in self?.mode = $0 }.store(in: &cancellables)
         engine.$currentScenario
             .receive(on: DispatchQueue.main)
-            .map { $0?.name ?? "—" }
-            .assign(to: &$currentScenarioName)
+            .sink { [weak self] sc in
+                self?.currentScenarioName = sc?.name ?? "—"
+            }
+            .store(in: &cancellables)
     }
 
     // MARK: - Progress
@@ -63,3 +66,6 @@ final class ControlPanelViewModel: ObservableObject {
         return "Step \(stepIndex + 1) / \(totalSteps)"
     }
 }
+
+#endif
+

@@ -1,3 +1,4 @@
+#if os(iOS)
 import Foundation
 
 // MARK: - HTTPBinEndpoint
@@ -34,3 +35,5 @@ enum HTTPBinEndpoint {
         }
     }
 }
+
+#endif

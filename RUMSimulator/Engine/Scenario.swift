@@ -1,3 +1,4 @@
+#if os(iOS)
 import Foundation
 
 // MARK: - ScenarioStep
@@ -20,3 +21,5 @@ struct Scenario {
     /// When true, the engine restarts automatically when the scenario completes
     let loop: Bool
 }
+
+#endif

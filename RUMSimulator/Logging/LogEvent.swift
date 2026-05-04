@@ -1,3 +1,4 @@
+#if os(iOS)
 import Foundation
 
 // MARK: - LogEvent
@@ -41,3 +42,5 @@ struct LogEvent: Codable, Identifiable {
         return type
     }
 }
+
+#endif

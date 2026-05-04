@@ -1,3 +1,4 @@
+#if os(iOS)
 import Foundation
 
 // MARK: - LoadMode
@@ -120,3 +121,5 @@ final class LoadGenerator {
         }
     }
 }
+
+#endif

@@ -1,4 +1,6 @@
+#if os(iOS)
 import Foundation
+import Combine
 
 // MARK: - DebugPanelViewModel
 
@@ -11,3 +13,5 @@ final class DebugPanelViewModel: ObservableObject {
     /// Fraction (0.0–1.0) of requests that return a fake error without hitting the network
     @Published var failureRate: Double = 0.0
 }
+
+#endif

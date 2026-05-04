@@ -1,3 +1,4 @@
+#if os(iOS)
 import Foundation
 
 // MARK: - NetworkSimulator
@@ -99,3 +100,5 @@ final class NetworkSimulator {
         )
     }
 }
+
+#endif

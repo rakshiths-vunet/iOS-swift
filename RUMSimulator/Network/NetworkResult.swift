@@ -1,3 +1,4 @@
+#if os(iOS)
 import Foundation
 
 // MARK: - NetworkResult
@@ -26,3 +27,5 @@ enum NetworkResult {
         }
     }
 }
+
+#endif

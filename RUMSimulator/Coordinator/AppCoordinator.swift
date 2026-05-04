@@ -16,7 +16,7 @@ final class AppCoordinator {
     let eventLogger: EventLogger
     private let debugViewModel: DebugPanelViewModel
     private let networkSimulator: NetworkSimulator
-    private let engineState: EngineStateLegacy
+    private let engineState: EngineState
     private let scenarioEngine: ScenarioEngine
     private let loadGenerator: LoadGenerator
 
@@ -37,10 +37,11 @@ final class AppCoordinator {
         eventLogger       = EventLogger()
         debugViewModel    = DebugPanelViewModel()
         networkSimulator  = NetworkSimulator(debugState: debugViewModel, logger: eventLogger)
-        engineState       = EngineStateLegacy()
+        engineState       = EngineState()
         scenarioEngine    = ScenarioEngine(state: engineState, logger: eventLogger)
         loadGenerator     = LoadGenerator(logger: eventLogger)
     }
+
 
     // MARK: - Start
 

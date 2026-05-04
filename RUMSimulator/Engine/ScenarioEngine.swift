@@ -1,3 +1,4 @@
+#if os(iOS)
 import Foundation
 
 // MARK: - ScenarioEngine
@@ -8,7 +9,7 @@ final class ScenarioEngine {
 
     // MARK: - Dependencies
 
-    private let stateLegacy: EngineStateLegacy
+    private let state: EngineState
     private let logger: EventLogger
 
     // MARK: - Internal state
@@ -23,8 +24,8 @@ final class ScenarioEngine {
 
     // MARK: - Init
 
-    init(state: EngineStateLegacy, logger: EventLogger) {
-        self.stateLegacy = state
+    init(state: EngineState, logger: EventLogger) {
+        self.state = state
         self.logger = logger
     }
 
@@ -37,11 +38,11 @@ final class ScenarioEngine {
         rateWindow = Date()
 
         DispatchQueue.main.async {
-            self.stateLegacy.isRunning = true
-            self.stateLegacy.currentScenario = scenario
-            self.stateLegacy.stepIndex = 0
-            self.stateLegacy.totalSteps = scenario.steps.count
-            self.stateLegacy.lastStepLabel = ""
+            self.state.isRunning = true
+            self.state.currentScenario = scenario
+            self.state.stepIndex = 0
+            self.state.totalSteps = scenario.steps.count
+            self.state.lastStepLabel = ""
         }
 
         startRateTimer()
@@ -57,18 +58,18 @@ final class ScenarioEngine {
         runTask = nil
         stopRateTimer()
         DispatchQueue.main.async {
-            self.stateLegacy.isRunning = false
+            self.state.isRunning = false
         }
     }
 
     func reset() {
         stop()
         DispatchQueue.main.async {
-            self.stateLegacy.stepIndex = 0
-            self.stateLegacy.totalSteps = 0
-            self.stateLegacy.currentScenario = nil
-            self.stateLegacy.eventsPerSecond = 0
-            self.stateLegacy.lastStepLabel = ""
+            self.state.stepIndex = 0
+            self.state.totalSteps = 0
+            self.state.currentScenario = nil
+            self.state.eventsPerSecond = 0
+            self.state.lastStepLabel = ""
         }
         logger.clear()
     }
@@ -81,8 +82,8 @@ final class ScenarioEngine {
                 guard !isStopped else { return }
 
                 await MainActor.run {
-                    self.stateLegacy.stepIndex = index
-                    self.stateLegacy.lastStepLabel = step.label
+                    self.state.stepIndex = index
+                    self.state.lastStepLabel = step.label
                     step.action()
                 }
 
@@ -115,7 +116,7 @@ final class ScenarioEngine {
         // Scenario ended
         if !isStopped {
             DispatchQueue.main.async {
-                self.stateLegacy.isRunning = false
+                self.state.isRunning = false
             }
             logger.log(
                 type: "scenario_end",
@@ -136,7 +137,7 @@ final class ScenarioEngine {
             let elapsed = Date().timeIntervalSince(self.rateWindow)
             let rate = elapsed > 0 ? Double(self.eventCount) / elapsed : 0
             DispatchQueue.main.async {
-                self.stateLegacy.eventsPerSecond = (rate * 10).rounded() / 10
+                self.state.eventsPerSecond = (rate * 10).rounded() / 10
             }
         }
     }
@@ -146,3 +147,6 @@ final class ScenarioEngine {
         rateTimer = nil
     }
 }
+
+#endif
+

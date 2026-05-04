@@ -1,8 +1,10 @@
+#if os(iOS)
 import Foundation
 
 // MARK: - LogFileManager
 
 /// Per-scenario file rotation. JSON files saved to /Documents/rum_log_{scenarioId}_{ISO8601}.json
+@MainActor
 final class LogFileManager {
 
     static let shared = LogFileManager()
@@ -67,3 +69,5 @@ final class LogFileManager {
             .sorted { $0.lastPathComponent > $1.lastPathComponent }
     }
 }
+
+#endif
