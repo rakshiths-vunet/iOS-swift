@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 // MARK: - S1: Basic Navigation Flow
@@ -38,3 +39,5 @@ extension ScenarioLibrary {
         )
     }
 }
+
+#endif

@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 // MARK: - ScenarioLibrary
@@ -17,3 +18,5 @@ final class ScenarioLibrary {
         [s1(), s2(), s3(), s4(), s5(), s6()]
     }
 }
+
+#endif

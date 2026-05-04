@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 // MARK: - GestureSimulator
@@ -36,3 +37,5 @@ final class GestureSimulator {
         targetVC?.simulateSwipeRight()
     }
 }
+
+#endif

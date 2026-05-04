@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import Foundation
 
 // MARK: - S6: Mixed Load (Continuous)
@@ -22,3 +23,5 @@ extension ScenarioLibrary {
         )
     }
 }
+
+#endif

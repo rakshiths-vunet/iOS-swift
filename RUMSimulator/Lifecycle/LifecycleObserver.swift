@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 // MARK: - LifecycleObserver
@@ -68,3 +69,5 @@ final class LifecycleObserver {
         notificationTokens = [backgroundToken, foregroundToken, activeToken]
     }
 }
+
+#endif

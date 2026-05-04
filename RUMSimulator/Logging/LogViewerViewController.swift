@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 // MARK: - LogViewerViewController
@@ -266,3 +267,5 @@ final class LogEventCell: UITableViewCell {
         }
     }
 }
+
+#endif

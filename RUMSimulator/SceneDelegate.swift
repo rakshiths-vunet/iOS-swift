@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -48,3 +49,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         coordinator?.eventLogger.flush()
     }
 }
+
+#endif

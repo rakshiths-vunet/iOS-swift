@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 import Combine
 
@@ -396,3 +397,5 @@ extension ControlPanelViewController: UIPickerViewDelegate {
         viewModel.selectedScenarioIndex = row
     }
 }
+
+#endif

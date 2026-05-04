@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 // MARK: - PlaygroundCoordinator
@@ -65,3 +66,5 @@ final class PlaygroundCoordinator {
         navigationController?.pushViewController(vc, animated: true)
     }
 }
+
+#endif

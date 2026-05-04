@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 // MARK: - NetworkPlaygroundVC
@@ -205,3 +206,5 @@ final class NetworkResultCell: UITableViewCell {
         }
     }
 }
+
+#endif

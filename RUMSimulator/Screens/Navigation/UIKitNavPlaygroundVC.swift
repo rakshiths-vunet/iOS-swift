@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 // MARK: - UIKitNavPlaygroundVC
@@ -67,3 +68,5 @@ final class UIKitNavPlaygroundVC: UIViewController {
         currentModal = nil
     }
 }
+
+#endif

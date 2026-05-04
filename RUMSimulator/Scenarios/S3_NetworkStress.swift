@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import Foundation
 
 // MARK: - S3: Network Stress Flow
@@ -40,3 +41,5 @@ extension ScenarioLibrary {
         )
     }
 }
+
+#endif

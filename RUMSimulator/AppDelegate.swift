@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 @main
@@ -36,3 +37,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension Notification.Name {
     static let showDebugPanel = Notification.Name("RUMSimulator.showDebugPanel")
 }
+
+#endif

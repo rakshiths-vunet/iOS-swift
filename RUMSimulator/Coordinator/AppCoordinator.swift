@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 // MARK: - AppCoordinator
@@ -83,3 +84,5 @@ final class AppCoordinator {
         eventLogger.log(type: "lifecycle", metadata: ["event": "app_start"])
     }
 }
+
+#endif

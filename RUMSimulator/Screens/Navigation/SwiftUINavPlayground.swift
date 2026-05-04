@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import SwiftUI
 
 // MARK: - SwiftUINavPlayground
@@ -100,3 +101,5 @@ final class SwiftUINavCoordinator: ObservableObject {
         path.removeAll()
     }
 }
+
+#endif

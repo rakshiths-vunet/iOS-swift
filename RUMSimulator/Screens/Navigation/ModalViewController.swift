@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 // MARK: - ModalViewController
@@ -43,3 +44,5 @@ final class ModalViewController: UIViewController {
         dismiss(animated: true)
     }
 }
+
+#endif

@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 // MARK: - S4: Session Restart Flow
@@ -34,3 +35,5 @@ extension ScenarioLibrary {
         )
     }
 }
+
+#endif

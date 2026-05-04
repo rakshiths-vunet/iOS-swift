@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import Foundation
 
 // MARK: - S5: Cold Start Simulation
@@ -31,3 +32,5 @@ extension ScenarioLibrary {
         )
     }
 }
+
+#endif

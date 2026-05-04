@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 // MARK: - NavLevelViewController
@@ -142,3 +143,5 @@ final class NavLevelViewController: UIViewController {
         return v
     }
 }
+
+#endif

@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 // MARK: - S2: Rapid Interaction Burst
@@ -35,3 +36,5 @@ extension ScenarioLibrary {
         )
     }
 }
+
+#endif

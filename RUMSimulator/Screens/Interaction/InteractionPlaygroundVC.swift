@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 // MARK: - InteractionPlaygroundVC
@@ -293,3 +294,5 @@ private extension UILabel {
         attributedText = attributed
     }
 }
+
+#endif

@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 // MARK: - CrashPlaygroundVC
@@ -169,3 +170,5 @@ final class CrashPlaygroundVC: UIViewController {
         return b
     }
 }
+
+#endif

@@ -1,3 +1,4 @@
+#if canImport(UIKit) && (os(iOS) || os(tvOS))
 import UIKit
 
 // MARK: - DebugPanelViewController
@@ -235,3 +236,5 @@ final class DebugPanelViewController: UIViewController {
         return v
     }
 }
+
+#endif
