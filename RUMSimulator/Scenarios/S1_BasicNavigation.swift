@@ -9,42 +9,32 @@ extension ScenarioLibrary {
             id: "S1",
             name: "Basic Navigation Flow",
             steps: [
-                ScenarioStep(label: "Open Navigation Playground") {
+                ScenarioStep(label: "Open Navigation Playground", action: {
                     nav?.openNavigationPlayground()
-                } delay: { 0.8 }(),
-                ScenarioStep(label: "Push Level A") {
+                }, delay: 0.8),
+                ScenarioStep(label: "Push Level A", action: {
                     nav?.navigationPlaygroundVC?.pushLevel()
-                } delay: { 0.6 }(),
-                ScenarioStep(label: "Push Level B") {
+                }, delay: 0.6),
+                ScenarioStep(label: "Push Level B", action: {
                     nav?.navigationPlaygroundVC?.pushLevel()
-                } delay: { 0.6 }(),
-                ScenarioStep(label: "Push Level C") {
+                }, delay: 0.6),
+                ScenarioStep(label: "Push Level C", action: {
                     nav?.navigationPlaygroundVC?.pushLevel()
-                } delay: { 0.6 }(),
-                ScenarioStep(label: "Push Level D") {
+                }, delay: 0.6),
+                ScenarioStep(label: "Push Level D", action: {
                     nav?.navigationPlaygroundVC?.pushLevel()
-                } delay: { 0.8 }(),
-                ScenarioStep(label: "Pop to Root") {
+                }, delay: 0.8),
+                ScenarioStep(label: "Pop to Root", action: {
                     nav?.navigationPlaygroundVC?.popToRoot()
-                } delay: { 1.0 }(),
-                ScenarioStep(label: "Present Modal") {
+                }, delay: 1.0),
+                ScenarioStep(label: "Present Modal", action: {
                     nav?.navigationPlaygroundVC?.presentModal()
-                } delay: { 1.0 }(),
-                ScenarioStep(label: "Dismiss Modal") {
+                }, delay: 1.0),
+                ScenarioStep(label: "Dismiss Modal", action: {
                     nav?.navigationPlaygroundVC?.dismissModal()
-                } delay: { 0.8 }(),
+                }, delay: 0.8),
             ],
             loop: false
         )
-    }
-}
-
-// MARK: - Helper to use trailing closure as value
-
-private func delay(_ value: TimeInterval) -> TimeInterval { value }
-
-extension ScenarioStep {
-    init(label: String, action: @escaping () -> Void, delay: () -> TimeInterval) {
-        self.init(label: label, action: action, delay: delay())
     }
 }
