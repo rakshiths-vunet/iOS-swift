@@ -5,6 +5,7 @@ import UIKit
 
 /// Factory returning all 6 predefined Scenario instances.
 /// Scenarios reference playground controllers via weak closures to avoid retain cycles.
+@MainActor
 final class ScenarioLibrary {
 
     weak var playgroundCoordinator: PlaygroundCoordinator?

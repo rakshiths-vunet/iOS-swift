@@ -5,6 +5,7 @@ import Foundation
 
 /// Sequential async step executor with configurable speed multiplier.
 /// All step actions run on MainActor. Supports stop and reset at any point.
+@MainActor
 final class ScenarioEngine {
 
     // MARK: - Dependencies
@@ -37,13 +38,11 @@ final class ScenarioEngine {
         eventCount = 0
         rateWindow = Date()
 
-        DispatchQueue.main.async {
-            self.state.isRunning = true
-            self.state.currentScenario = scenario
-            self.state.stepIndex = 0
-            self.state.totalSteps = scenario.steps.count
-            self.state.lastStepLabel = ""
-        }
+        self.state.isRunning = true
+        self.state.currentScenario = scenario
+        self.state.stepIndex = 0
+        self.state.totalSteps = scenario.steps.count
+        self.state.lastStepLabel = ""
 
         startRateTimer()
 
@@ -57,20 +56,16 @@ final class ScenarioEngine {
         runTask?.cancel()
         runTask = nil
         stopRateTimer()
-        DispatchQueue.main.async {
-            self.state.isRunning = false
-        }
+        self.state.isRunning = false
     }
 
     func reset() {
         stop()
-        DispatchQueue.main.async {
-            self.state.stepIndex = 0
-            self.state.totalSteps = 0
-            self.state.currentScenario = nil
-            self.state.eventsPerSecond = 0
-            self.state.lastStepLabel = ""
-        }
+        self.state.stepIndex = 0
+        self.state.totalSteps = 0
+        self.state.currentScenario = nil
+        self.state.eventsPerSecond = 0
+        self.state.lastStepLabel = ""
         logger.clear()
     }
 
@@ -81,11 +76,9 @@ final class ScenarioEngine {
             for (index, step) in scenario.steps.enumerated() {
                 guard !isStopped else { return }
 
-                await MainActor.run {
-                    self.state.stepIndex = index
-                    self.state.lastStepLabel = step.label
-                    step.action()
-                }
+                self.state.stepIndex = index
+                self.state.lastStepLabel = step.label
+                step.action()
 
                 logger.log(
                     type: "step",
@@ -115,9 +108,7 @@ final class ScenarioEngine {
 
         // Scenario ended
         if !isStopped {
-            DispatchQueue.main.async {
-                self.state.isRunning = false
-            }
+            self.state.isRunning = false
             logger.log(
                 type: "scenario_end",
                 scenario: scenario.name,
@@ -136,9 +127,7 @@ final class ScenarioEngine {
             guard let self = self else { return }
             let elapsed = Date().timeIntervalSince(self.rateWindow)
             let rate = elapsed > 0 ? Double(self.eventCount) / elapsed : 0
-            DispatchQueue.main.async {
-                self.state.eventsPerSecond = (rate * 10).rounded() / 10
-            }
+            self.state.eventsPerSecond = (rate * 10).rounded() / 10
         }
     }
 

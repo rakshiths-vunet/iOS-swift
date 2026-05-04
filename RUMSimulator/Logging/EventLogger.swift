@@ -5,6 +5,7 @@ import Foundation
 
 /// In-memory ring buffer (500 events) + async file write.
 /// Does NOT block the caller. Thread-safe via serial queue.
+@MainActor
 final class EventLogger {
 
     // MARK: - In-memory buffer
@@ -28,8 +29,7 @@ final class EventLogger {
 
     func log(type: String, scenario: String? = nil, step: Int? = nil, metadata: [String: String] = [:]) {
         let event = LogEvent(type: type, scenario: scenario, step: step, metadata: metadata)
-        queue.async { [weak self] in
-            guard let self = self else { return }
+        Task { @MainActor in
             self.events.append(event)
             if self.events.count > self.maxEvents {
                 self.events.removeFirst(self.events.count - self.maxEvents)
@@ -39,15 +39,15 @@ final class EventLogger {
     }
 
     func clear() {
-        queue.async { [weak self] in
-            self?.events.removeAll()
-            self?.fileManager.startNewFile()
+        Task { @MainActor in
+            self.events.removeAll()
+            self.fileManager.startNewFile()
         }
     }
 
     func flush() {
-        queue.async { [weak self] in
-            self?.fileManager.flush(events: self?.events ?? [])
+        Task { @MainActor in
+            self.fileManager.flush(events: self.events)
         }
     }
 

@@ -5,6 +5,7 @@ import Combine
 // MARK: - ControlPanelViewModel
 
 /// Observable state bridging EngineState to the ControlPanel UI.
+@MainActor
 final class ControlPanelViewModel: ObservableObject {
 
     // MARK: - Engine state (mirrored)

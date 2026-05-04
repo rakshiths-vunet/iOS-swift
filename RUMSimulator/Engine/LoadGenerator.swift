@@ -15,6 +15,7 @@ enum LoadMode: String, CaseIterable {
 /// - Burst: X actions in Y seconds using DispatchGroup
 /// - Sustained: continuous moderate rate using a repeating timer
 /// - Mixed: interleaved navigation, network, and tap events
+@MainActor
 final class LoadGenerator {
 
     private var sustainedTimer: Timer?

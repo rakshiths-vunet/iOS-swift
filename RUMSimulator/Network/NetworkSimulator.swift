@@ -5,6 +5,7 @@ import Foundation
 
 /// URLSession wrapper that applies debug panel overrides.
 /// All requests MUST go through URLSession.shared — no third-party networking.
+@MainActor
 final class NetworkSimulator {
 
     private let debugState: DebugPanelViewModel

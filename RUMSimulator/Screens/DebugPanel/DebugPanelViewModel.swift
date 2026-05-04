@@ -5,6 +5,7 @@ import Combine
 // MARK: - DebugPanelViewModel
 
 /// Observable state for Debug Panel controls.
+@MainActor
 final class DebugPanelViewModel: ObservableObject {
     /// Speed multiplier applied to all ScenarioEngine step delays (0.5× – 5×)
     @Published var speedMultiplier: Double = 1.0

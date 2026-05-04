@@ -5,6 +5,7 @@ import UIKit
 
 /// Root coordinator: wires engine, logger, network, and navigation.
 /// The ONLY class that touches all layers. Uses dependency injection — no singletons.
+@MainActor
 final class AppCoordinator {
 
     // MARK: - Window
