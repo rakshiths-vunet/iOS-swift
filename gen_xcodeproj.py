@@ -26,7 +26,7 @@ for dirpath, dirnames, filenames in os.walk(SRC_ROOT):
         rel = os.path.relpath(os.path.join(dirpath, fn), SRC_ROOT)
         if fn.endswith(".swift"):
             SWIFT_FILES.append(rel)
-        elif fn.endswith(".storyboard") or fn.endswith(".plist") or fn.endswith(".xcassets"):
+        elif fn.endswith(".plist") or fn.endswith(".xcassets"):
             RESOURCE_FILES.append(rel)
 
 # Also include top-level Info.plist explicitly
@@ -350,6 +350,8 @@ COMMON_SETTINGS = """
 \t\t\t\tMTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 \t\t\t\tONLY_ACTIVE_ARCH = YES;
 \t\t\t\tSDKROOT = iphoneos;
+\t\t\t\tSUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+\t\t\t\tTARGETED_DEVICE_FAMILY = "1,2";
 \t\t\t\tSWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 \t\t\t\tSWIFT_OPTIMIZATION_LEVEL = "-Onone";"""
 
@@ -371,6 +373,8 @@ def pbx_build_configurations():
     lines.append(f"\t\t\tbuildSettings = {{")
     lines.append(f"\t\t\t\tIPHONEOS_DEPLOYMENT_TARGET = 16.0;")
     lines.append(f"\t\t\t\tSDKROOT = iphoneos;")
+    lines.append(f"\t\t\t\tSUPPORTED_PLATFORMS = \"iphonesimulator iphoneos\";")
+    lines.append(f"\t\t\t\tTARGETED_DEVICE_FAMILY = \"1,2\";")
     lines.append(f"\t\t\t\tSWIFT_OPTIMIZATION_LEVEL = \"-O\";")
     lines.append(f"\t\t\t}};")
     lines.append(f"\t\t\tname = Release;")
@@ -388,11 +392,11 @@ def pbx_build_configurations():
     lines.append(f"\t\t\t\tGENERATE_INFOPLIST_FILE = NO;")
     lines.append(f"\t\t\t\tINFOPLIST_FILE = \"{p}/Info.plist\";")
     lines.append(f"\t\t\t\tIPHONEOS_DEPLOYMENT_TARGET = 16.0;")
-    lines.append(f"\t\t\t\tLE_SWIFT_VERSION = 5.0;")
     lines.append(f"\t\t\t\tMARKETING_VERSION = 1.0;")
     lines.append(f"\t\t\t\tPRODUCT_BUNDLE_IDENTIFIER = \"com.rumsimulator.{p}\";")
     lines.append(f"\t\t\t\tPRODUCT_NAME = \"$(TARGET_NAME)\";")
     lines.append(f"\t\t\t\tSDKROOT = iphoneos;")
+    lines.append(f"\t\t\t\tSUPPORTED_PLATFORMS = \"iphonesimulator iphoneos\";")
     lines.append(f"\t\t\t\tSWIFT_VERSION = 5.0;")
     lines.append(f"\t\t\t\tTARGETED_DEVICE_FAMILY = \"1,2\";")
     lines.append(f"\t\t\t}};")
@@ -413,6 +417,7 @@ def pbx_build_configurations():
     lines.append(f"\t\t\t\tPRODUCT_BUNDLE_IDENTIFIER = \"com.rumsimulator.{p}\";")
     lines.append(f"\t\t\t\tPRODUCT_NAME = \"$(TARGET_NAME)\";")
     lines.append(f"\t\t\t\tSDKROOT = iphoneos;")
+    lines.append(f"\t\t\t\tSUPPORTED_PLATFORMS = \"iphonesimulator iphoneos\";")
     lines.append(f"\t\t\t\tSWIFT_OPTIMIZATION_LEVEL = \"-O\";")
     lines.append(f"\t\t\t\tSWIFT_VERSION = 5.0;")
     lines.append(f"\t\t\t\tTARGETED_DEVICE_FAMILY = \"1,2\";")

@@ -44,7 +44,6 @@
 		BC52D28E4F05615D759CCF95 /* UIKitNavPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7BA9526400132489B3119 /* UIKitNavPlaygroundVC.swift */; };
 		16CFC85C6E24C3A36FE2D317 /* NetworkPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC1AA8E9E694FD42F1B58B /* NetworkPlaygroundVC.swift */; };
 		E2A7A127E65AF03E4A5AAB38 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAD676C6E129A504558040AC /* Info.plist */; };
-		396049F6E2C4048662D10735 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F90EF7609939E0AFDF31E84 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,7 +85,6 @@
 		D6F7BA9526400132489B3119 /* UIKitNavPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIKitNavPlaygroundVC.swift; path = RUMSimulator/Screens/Navigation/UIKitNavPlaygroundVC.swift; sourceTree = "<group>"; };
 		72EC1AA8E9E694FD42F1B58B /* NetworkPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkPlaygroundVC.swift; path = RUMSimulator/Screens/Network/NetworkPlaygroundVC.swift; sourceTree = "<group>"; };
 		BAD676C6E129A504558040AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = RUMSimulator/Info.plist; sourceTree = "<group>"; };
-		4F90EF7609939E0AFDF31E84 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RUMSimulator/Resources/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +122,6 @@
 				97CE245F107A2E9830993C94 /* Lifecycle */,
 				97185CB61B7134E43B522294 /* Logging */,
 				BCB471A99A04B6AEF1B1D46C /* Network */,
-				B642DCC00EC1A184662227C2 /* Resources */,
 				329AD13B687B40B355407E61 /* Scenarios */,
 				AEB4B01D25995FBE84B50408 /* Screens */,
 				281DB7DB0BA79362A4590C36 /* AppDelegate.swift */,
@@ -183,14 +180,6 @@
 				71A34359941FA5B1E300E4AF /* NetworkSimulator.swift */,
 			);
 			name = Network;
-			sourceTree = "<group>";
-		};
-		B642DCC00EC1A184662227C2 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				4F90EF7609939E0AFDF31E84 /* LaunchScreen.storyboard */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		329AD13B687B40B355407E61 /* Scenarios */ = {
@@ -340,7 +329,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2A7A127E65AF03E4A5AAB38 /* Info.plist in Resources */,
-				396049F6E2C4048662D10735 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +403,8 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -425,6 +415,8 @@
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
@@ -440,11 +432,11 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "RUMSimulator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LE_SWIFT_VERSION = 5.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rumsimulator.RUMSimulator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -463,6 +455,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rumsimulator.RUMSimulator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
