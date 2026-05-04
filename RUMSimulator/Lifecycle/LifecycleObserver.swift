@@ -5,6 +5,7 @@ import UIKit
 
 /// Bridges SceneDelegate callbacks to EventLogger.
 /// Infrastructure object — NOT a screen. Wired in SceneDelegate, not PlaygroundCoordinator.
+@MainActor
 final class LifecycleObserver {
 
     private let logger: EventLogger

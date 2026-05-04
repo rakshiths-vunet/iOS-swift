@@ -5,7 +5,7 @@ import UIKit
 
 /// Routes between all playground modules (UIKit + SwiftUI).
 /// Holds weak references to active playground VCs for engine access.
-final class PlaygroundCoordinator {
+@MainActor final class PlaygroundCoordinator {
 
     // MARK: - Dependencies
 
