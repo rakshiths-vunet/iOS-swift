@@ -48,7 +48,9 @@ final class LifecycleObserver {
             object: nil,
             queue: .main
         ) { [weak self] _ in
-            self?.logger.log(type: "lifecycle", metadata: ["event": "didEnterBackground_notification"])
+            Task { @MainActor in
+                self?.logger.log(type: "lifecycle", metadata: ["event": "didEnterBackground_notification"])
+            }
         }
 
         let foregroundToken = nc.addObserver(
@@ -56,7 +58,9 @@ final class LifecycleObserver {
             object: nil,
             queue: .main
         ) { [weak self] _ in
-            self?.logger.log(type: "lifecycle", metadata: ["event": "willEnterForeground_notification"])
+            Task { @MainActor in
+                self?.logger.log(type: "lifecycle", metadata: ["event": "willEnterForeground_notification"])
+            }
         }
 
         let activeToken = nc.addObserver(
@@ -64,7 +68,9 @@ final class LifecycleObserver {
             object: nil,
             queue: .main
         ) { [weak self] _ in
-            self?.logger.log(type: "lifecycle", metadata: ["event": "didBecomeActive_notification"])
+            Task { @MainActor in
+                self?.logger.log(type: "lifecycle", metadata: ["event": "didBecomeActive_notification"])
+            }
         }
 
         notificationTokens = [backgroundToken, foregroundToken, activeToken]

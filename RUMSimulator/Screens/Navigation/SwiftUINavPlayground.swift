@@ -32,7 +32,7 @@ struct SwiftUINavPlayground: View {
 
 struct SwiftUINavLevel: View {
     let level: Int
-    let coordinator: SwiftUINavCoordinator
+    @ObservedObject var coordinator: SwiftUINavCoordinator
 
     var body: some View {
         VStack(spacing: 20) {
@@ -88,6 +88,7 @@ struct SwiftUIModal: View {
 
 // MARK: - SwiftUINavCoordinator
 
+@MainActor
 final class SwiftUINavCoordinator: ObservableObject {
     @Published var path: [Int] = []
     @Published var isModalPresented = false
