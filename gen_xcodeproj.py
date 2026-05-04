@@ -106,7 +106,7 @@ def pbx_file_references():
         name = os.path.basename(f)
         lkt  = last_known_type(f)
         # Path relative to group (we'll set sourceTree to SOURCE_ROOT and use full rel path)
-        lines.append(f"\t\t{fid} /* {name} */ = {{isa = PBXFileReference; lastKnownFileType = {lkt}; name = {name}; path = {PROJ_NAME}/{f}; sourceTree = \"<group>\"; }};")
+        lines.append(f"\t\t{fid} /* {name} */ = {{isa = PBXFileReference; lastKnownFileType = {lkt}; name = {name}; path = {f}; sourceTree = \"<group>\"; }};")
     lines.append("/* End PBXFileReference section */")
     return "\n".join(lines)
 
