@@ -1,0 +1,32 @@
+name: RUMSimulator
+options:
+  bundleIdPrefix: com.rumsimulator
+  deploymentTarget:
+    iOS: "16.0"
+  xcodeVersion: "15.0"
+
+settings:
+  SWIFT_VERSION: "5.9"
+  PRODUCT_BUNDLE_IDENTIFIER: com.rumsimulator.RUMSimulator
+  INFOPLIST_FILE: RUMSimulator/Info.plist
+  DEVELOPMENT_TEAM: ""
+  TARGETED_DEVICE_FAMILY: "1,2"
+
+targets:
+  RUMSimulator:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: RUMSimulator
+        excludes:
+          - "Resources/LaunchScreen.storyboard"
+    resources:
+      - path: RUMSimulator/Resources
+    settings:
+      INFOPLIST_FILE: RUMSimulator/Info.plist
+      PRODUCT_BUNDLE_IDENTIFIER: com.rumsimulator.RUMSimulator
+      SWIFT_VERSION: "5.9"
+      LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks"
+    info:
+      path: RUMSimulator/Info.plist
