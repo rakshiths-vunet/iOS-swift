@@ -16,7 +16,19 @@
 		FFC492DDC09590BCD6145FFE /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3CA61024A6E6C1D3D7E5B9 /* Scenario.swift */; };
 		F249CCCA2CB60B568263A6DC /* ScenarioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D045B0E9DFE4E9D0062024 /* ScenarioEngine.swift */; };
 		46D9373AF12B62D50DFD13F2 /* ScenarioLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86583711159A8B830708A463 /* ScenarioLibrary.swift */; };
-		C1C97432A9D097AA2E593742 /* LifecycleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8595AFF9964CF45BE8F673C /* LifecycleObserver.swift */; };
+		6BE6B7341D38FA74936DD10F /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9523150CC118E60D03EB6B85 /* ModalViewController.swift */; };
+		B9E065077C06DF9A0B6CA144 /* NavLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B44E1294F48DF9169D8AE /* NavLevelViewController.swift */; };
+		14C4BD9B53F04B65E0D37319 /* SwiftUINavPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAA88B2528DA97810FFAA5A /* SwiftUINavPlayground.swift */; };
+		BC52D28E4F05615D759CCF95 /* UIKitNavPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7BA9526400132489B3119 /* UIKitNavPlaygroundVC.swift */; };
+		C9A0E82FB0FE22EC5804A596 /* CrashPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE87B1ECC8A0391F72EE1100 /* CrashPlaygroundVC.swift */; };
+		1D2DA5C6B852BAECC5742EE4 /* DebugPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABE16381EF55868173D498B /* DebugPanelViewController.swift */; };
+		997156694A1F4CAF3D551FB3 /* DebugPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFF90580E06F3764A064C6B /* DebugPanelViewModel.swift */; };
+		16CFC85C6E24C3A36FE2D317 /* NetworkPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC1AA8E9E694FD42F1B58B /* NetworkPlaygroundVC.swift */; };
+		C80928DB6AE28898A464934A /* GestureSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FDCE01D8C796422EE13E2C /* GestureSimulator.swift */; };
+		6B0689FFB810E18276BCE26A /* InteractionPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DE2FCCAAA7987D9858E50 /* InteractionPlaygroundVC.swift */; };
+		DFDB35B4F02979CD04CEEFDE /* LifecyclePlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642B32CB5ABFC3348FC047A0 /* LifecyclePlaygroundVC.swift */; };
+		64A907C0F3DC8E0BD34EB524 /* ControlPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB6A985C494FDFE7CA66AC /* ControlPanelViewController.swift */; };
+		DE50E9A3ABAEEC1D1B0D9167 /* ControlPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DB99AEF222C7B2504822B /* ControlPanelViewModel.swift */; };
 		BA78DC3D99803BCE101BB7CB /* EventLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA4A39B5A2EC711CEB77AAC /* EventLogger.swift */; };
 		B0D3604D6DBC946A78C5B46E /* LogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D2AAA02EFB702A3F299CC0 /* LogEvent.swift */; };
 		15889BD7172CD514E296F839 /* LogFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E948338B7596F7E43DE87 /* LogFileManager.swift */; };
@@ -30,20 +42,8 @@
 		DE19361F82FFC9A70B0CAC99 /* S4_SessionRestart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18706362B6E85EBEABD7378 /* S4_SessionRestart.swift */; };
 		7FF25168F571DAF8807FF4F2 /* S5_ColdStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC849FE69657CA8B6D2B1813 /* S5_ColdStart.swift */; };
 		2A9ECAB041C4427DD58304CC /* S6_MixedLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01812D4BE3BD0837A42AE2FC /* S6_MixedLoad.swift */; };
-		64A907C0F3DC8E0BD34EB524 /* ControlPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB6A985C494FDFE7CA66AC /* ControlPanelViewController.swift */; };
-		DE50E9A3ABAEEC1D1B0D9167 /* ControlPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DB99AEF222C7B2504822B /* ControlPanelViewModel.swift */; };
-		C9A0E82FB0FE22EC5804A596 /* CrashPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE87B1ECC8A0391F72EE1100 /* CrashPlaygroundVC.swift */; };
-		1D2DA5C6B852BAECC5742EE4 /* DebugPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABE16381EF55868173D498B /* DebugPanelViewController.swift */; };
-		997156694A1F4CAF3D551FB3 /* DebugPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFF90580E06F3764A064C6B /* DebugPanelViewModel.swift */; };
-		C80928DB6AE28898A464934A /* GestureSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FDCE01D8C796422EE13E2C /* GestureSimulator.swift */; };
-		6B0689FFB810E18276BCE26A /* InteractionPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DE2FCCAAA7987D9858E50 /* InteractionPlaygroundVC.swift */; };
-		DFDB35B4F02979CD04CEEFDE /* LifecyclePlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642B32CB5ABFC3348FC047A0 /* LifecyclePlaygroundVC.swift */; };
-		6BE6B7341D38FA74936DD10F /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9523150CC118E60D03EB6B85 /* ModalViewController.swift */; };
-		B9E065077C06DF9A0B6CA144 /* NavLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B44E1294F48DF9169D8AE /* NavLevelViewController.swift */; };
-		14C4BD9B53F04B65E0D37319 /* SwiftUINavPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAA88B2528DA97810FFAA5A /* SwiftUINavPlayground.swift */; };
-		BC52D28E4F05615D759CCF95 /* UIKitNavPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7BA9526400132489B3119 /* UIKitNavPlaygroundVC.swift */; };
-		16CFC85C6E24C3A36FE2D317 /* NetworkPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC1AA8E9E694FD42F1B58B /* NetworkPlaygroundVC.swift */; };
-		E2A7A127E65AF03E4A5AAB38 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAD676C6E129A504558040AC /* Info.plist */; };
+		C1C97432A9D097AA2E593742 /* LifecycleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8595AFF9964CF45BE8F673C /* LifecycleObserver.swift */; };
+		A4E74449693B4D6DEC278CCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AB55363148003992F62A8EC /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +57,19 @@
 		DF3CA61024A6E6C1D3D7E5B9 /* Scenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Scenario.swift; path = RUMSimulator/Engine/Scenario.swift; sourceTree = "<group>"; };
 		70D045B0E9DFE4E9D0062024 /* ScenarioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScenarioEngine.swift; path = RUMSimulator/Engine/ScenarioEngine.swift; sourceTree = "<group>"; };
 		86583711159A8B830708A463 /* ScenarioLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScenarioLibrary.swift; path = RUMSimulator/Engine/ScenarioLibrary.swift; sourceTree = "<group>"; };
-		E8595AFF9964CF45BE8F673C /* LifecycleObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LifecycleObserver.swift; path = RUMSimulator/Lifecycle/LifecycleObserver.swift; sourceTree = "<group>"; };
+		9523150CC118E60D03EB6B85 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModalViewController.swift; path = RUMSimulator/Screens/Navigation/ModalViewController.swift; sourceTree = "<group>"; };
+		4C7B44E1294F48DF9169D8AE /* NavLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavLevelViewController.swift; path = RUMSimulator/Screens/Navigation/NavLevelViewController.swift; sourceTree = "<group>"; };
+		DFAA88B2528DA97810FFAA5A /* SwiftUINavPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftUINavPlayground.swift; path = RUMSimulator/Screens/Navigation/SwiftUINavPlayground.swift; sourceTree = "<group>"; };
+		D6F7BA9526400132489B3119 /* UIKitNavPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIKitNavPlaygroundVC.swift; path = RUMSimulator/Screens/Navigation/UIKitNavPlaygroundVC.swift; sourceTree = "<group>"; };
+		BE87B1ECC8A0391F72EE1100 /* CrashPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CrashPlaygroundVC.swift; path = RUMSimulator/Screens/CrashError/CrashPlaygroundVC.swift; sourceTree = "<group>"; };
+		8ABE16381EF55868173D498B /* DebugPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugPanelViewController.swift; path = RUMSimulator/Screens/DebugPanel/DebugPanelViewController.swift; sourceTree = "<group>"; };
+		FBFF90580E06F3764A064C6B /* DebugPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugPanelViewModel.swift; path = RUMSimulator/Screens/DebugPanel/DebugPanelViewModel.swift; sourceTree = "<group>"; };
+		72EC1AA8E9E694FD42F1B58B /* NetworkPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkPlaygroundVC.swift; path = RUMSimulator/Screens/Network/NetworkPlaygroundVC.swift; sourceTree = "<group>"; };
+		45FDCE01D8C796422EE13E2C /* GestureSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GestureSimulator.swift; path = RUMSimulator/Screens/Interaction/GestureSimulator.swift; sourceTree = "<group>"; };
+		682DE2FCCAAA7987D9858E50 /* InteractionPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InteractionPlaygroundVC.swift; path = RUMSimulator/Screens/Interaction/InteractionPlaygroundVC.swift; sourceTree = "<group>"; };
+		642B32CB5ABFC3348FC047A0 /* LifecyclePlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LifecyclePlaygroundVC.swift; path = RUMSimulator/Screens/Lifecycle/LifecyclePlaygroundVC.swift; sourceTree = "<group>"; };
+		A5FB6A985C494FDFE7CA66AC /* ControlPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ControlPanelViewController.swift; path = RUMSimulator/Screens/ControlPanel/ControlPanelViewController.swift; sourceTree = "<group>"; };
+		A40DB99AEF222C7B2504822B /* ControlPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ControlPanelViewModel.swift; path = RUMSimulator/Screens/ControlPanel/ControlPanelViewModel.swift; sourceTree = "<group>"; };
 		1AA4A39B5A2EC711CEB77AAC /* EventLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventLogger.swift; path = RUMSimulator/Logging/EventLogger.swift; sourceTree = "<group>"; };
 		51D2AAA02EFB702A3F299CC0 /* LogEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogEvent.swift; path = RUMSimulator/Logging/LogEvent.swift; sourceTree = "<group>"; };
 		DA6E948338B7596F7E43DE87 /* LogFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogFileManager.swift; path = RUMSimulator/Logging/LogFileManager.swift; sourceTree = "<group>"; };
@@ -71,20 +83,8 @@
 		C18706362B6E85EBEABD7378 /* S4_SessionRestart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S4_SessionRestart.swift; path = RUMSimulator/Scenarios/S4_SessionRestart.swift; sourceTree = "<group>"; };
 		BC849FE69657CA8B6D2B1813 /* S5_ColdStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S5_ColdStart.swift; path = RUMSimulator/Scenarios/S5_ColdStart.swift; sourceTree = "<group>"; };
 		01812D4BE3BD0837A42AE2FC /* S6_MixedLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S6_MixedLoad.swift; path = RUMSimulator/Scenarios/S6_MixedLoad.swift; sourceTree = "<group>"; };
-		A5FB6A985C494FDFE7CA66AC /* ControlPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ControlPanelViewController.swift; path = RUMSimulator/Screens/ControlPanel/ControlPanelViewController.swift; sourceTree = "<group>"; };
-		A40DB99AEF222C7B2504822B /* ControlPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ControlPanelViewModel.swift; path = RUMSimulator/Screens/ControlPanel/ControlPanelViewModel.swift; sourceTree = "<group>"; };
-		BE87B1ECC8A0391F72EE1100 /* CrashPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CrashPlaygroundVC.swift; path = RUMSimulator/Screens/CrashError/CrashPlaygroundVC.swift; sourceTree = "<group>"; };
-		8ABE16381EF55868173D498B /* DebugPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugPanelViewController.swift; path = RUMSimulator/Screens/DebugPanel/DebugPanelViewController.swift; sourceTree = "<group>"; };
-		FBFF90580E06F3764A064C6B /* DebugPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugPanelViewModel.swift; path = RUMSimulator/Screens/DebugPanel/DebugPanelViewModel.swift; sourceTree = "<group>"; };
-		45FDCE01D8C796422EE13E2C /* GestureSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GestureSimulator.swift; path = RUMSimulator/Screens/Interaction/GestureSimulator.swift; sourceTree = "<group>"; };
-		682DE2FCCAAA7987D9858E50 /* InteractionPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InteractionPlaygroundVC.swift; path = RUMSimulator/Screens/Interaction/InteractionPlaygroundVC.swift; sourceTree = "<group>"; };
-		642B32CB5ABFC3348FC047A0 /* LifecyclePlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LifecyclePlaygroundVC.swift; path = RUMSimulator/Screens/Lifecycle/LifecyclePlaygroundVC.swift; sourceTree = "<group>"; };
-		9523150CC118E60D03EB6B85 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModalViewController.swift; path = RUMSimulator/Screens/Navigation/ModalViewController.swift; sourceTree = "<group>"; };
-		4C7B44E1294F48DF9169D8AE /* NavLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavLevelViewController.swift; path = RUMSimulator/Screens/Navigation/NavLevelViewController.swift; sourceTree = "<group>"; };
-		DFAA88B2528DA97810FFAA5A /* SwiftUINavPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftUINavPlayground.swift; path = RUMSimulator/Screens/Navigation/SwiftUINavPlayground.swift; sourceTree = "<group>"; };
-		D6F7BA9526400132489B3119 /* UIKitNavPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIKitNavPlaygroundVC.swift; path = RUMSimulator/Screens/Navigation/UIKitNavPlaygroundVC.swift; sourceTree = "<group>"; };
-		72EC1AA8E9E694FD42F1B58B /* NetworkPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkPlaygroundVC.swift; path = RUMSimulator/Screens/Network/NetworkPlaygroundVC.swift; sourceTree = "<group>"; };
-		BAD676C6E129A504558040AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = RUMSimulator/Info.plist; sourceTree = "<group>"; };
+		E8595AFF9964CF45BE8F673C /* LifecycleObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LifecycleObserver.swift; path = RUMSimulator/Lifecycle/LifecycleObserver.swift; sourceTree = "<group>"; };
+		7AB55363148003992F62A8EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = RUMSimulator/Resources/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,11 +122,11 @@
 				97CE245F107A2E9830993C94 /* Lifecycle */,
 				97185CB61B7134E43B522294 /* Logging */,
 				BCB471A99A04B6AEF1B1D46C /* Network */,
+				B642DCC00EC1A184662227C2 /* Resources */,
 				329AD13B687B40B355407E61 /* Scenarios */,
 				AEB4B01D25995FBE84B50408 /* Screens */,
 				281DB7DB0BA79362A4590C36 /* AppDelegate.swift */,
 				26171BDB7B7B7F146DD91BCF /* SceneDelegate.swift */,
-				BAD676C6E129A504558040AC /* Info.plist */,
 			);
 			name = RUMSimulator;
 			path = RUMSimulator;
@@ -180,6 +180,14 @@
 				71A34359941FA5B1E300E4AF /* NetworkSimulator.swift */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		B642DCC00EC1A184662227C2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7AB55363148003992F62A8EC /* Assets.xcassets */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		329AD13B687B40B355407E61 /* Scenarios */ = {
@@ -328,7 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2A7A127E65AF03E4A5AAB38 /* Info.plist in Resources */,
+				A4E74449693B4D6DEC278CCE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +356,19 @@
 				FFC492DDC09590BCD6145FFE /* Scenario.swift in Sources */,
 				F249CCCA2CB60B568263A6DC /* ScenarioEngine.swift in Sources */,
 				46D9373AF12B62D50DFD13F2 /* ScenarioLibrary.swift in Sources */,
-				C1C97432A9D097AA2E593742 /* LifecycleObserver.swift in Sources */,
+				6BE6B7341D38FA74936DD10F /* ModalViewController.swift in Sources */,
+				B9E065077C06DF9A0B6CA144 /* NavLevelViewController.swift in Sources */,
+				14C4BD9B53F04B65E0D37319 /* SwiftUINavPlayground.swift in Sources */,
+				BC52D28E4F05615D759CCF95 /* UIKitNavPlaygroundVC.swift in Sources */,
+				C9A0E82FB0FE22EC5804A596 /* CrashPlaygroundVC.swift in Sources */,
+				1D2DA5C6B852BAECC5742EE4 /* DebugPanelViewController.swift in Sources */,
+				997156694A1F4CAF3D551FB3 /* DebugPanelViewModel.swift in Sources */,
+				16CFC85C6E24C3A36FE2D317 /* NetworkPlaygroundVC.swift in Sources */,
+				C80928DB6AE28898A464934A /* GestureSimulator.swift in Sources */,
+				6B0689FFB810E18276BCE26A /* InteractionPlaygroundVC.swift in Sources */,
+				DFDB35B4F02979CD04CEEFDE /* LifecyclePlaygroundVC.swift in Sources */,
+				64A907C0F3DC8E0BD34EB524 /* ControlPanelViewController.swift in Sources */,
+				DE50E9A3ABAEEC1D1B0D9167 /* ControlPanelViewModel.swift in Sources */,
 				BA78DC3D99803BCE101BB7CB /* EventLogger.swift in Sources */,
 				B0D3604D6DBC946A78C5B46E /* LogEvent.swift in Sources */,
 				15889BD7172CD514E296F839 /* LogFileManager.swift in Sources */,
@@ -362,19 +382,7 @@
 				DE19361F82FFC9A70B0CAC99 /* S4_SessionRestart.swift in Sources */,
 				7FF25168F571DAF8807FF4F2 /* S5_ColdStart.swift in Sources */,
 				2A9ECAB041C4427DD58304CC /* S6_MixedLoad.swift in Sources */,
-				64A907C0F3DC8E0BD34EB524 /* ControlPanelViewController.swift in Sources */,
-				DE50E9A3ABAEEC1D1B0D9167 /* ControlPanelViewModel.swift in Sources */,
-				C9A0E82FB0FE22EC5804A596 /* CrashPlaygroundVC.swift in Sources */,
-				1D2DA5C6B852BAECC5742EE4 /* DebugPanelViewController.swift in Sources */,
-				997156694A1F4CAF3D551FB3 /* DebugPanelViewModel.swift in Sources */,
-				C80928DB6AE28898A464934A /* GestureSimulator.swift in Sources */,
-				6B0689FFB810E18276BCE26A /* InteractionPlaygroundVC.swift in Sources */,
-				DFDB35B4F02979CD04CEEFDE /* LifecyclePlaygroundVC.swift in Sources */,
-				6BE6B7341D38FA74936DD10F /* ModalViewController.swift in Sources */,
-				B9E065077C06DF9A0B6CA144 /* NavLevelViewController.swift in Sources */,
-				14C4BD9B53F04B65E0D37319 /* SwiftUINavPlayground.swift in Sources */,
-				BC52D28E4F05615D759CCF95 /* UIKitNavPlaygroundVC.swift in Sources */,
-				16CFC85C6E24C3A36FE2D317 /* NetworkPlaygroundVC.swift in Sources */,
+				C1C97432A9D097AA2E593742 /* LifecycleObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

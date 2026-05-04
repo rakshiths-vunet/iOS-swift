@@ -21,12 +21,20 @@ SWIFT_FILES   = []
 RESOURCE_FILES = []
 
 for dirpath, dirnames, filenames in os.walk(SRC_ROOT):
-    dirnames.sort()
+    # Detect .xcassets directories and add them as a single resource
+    for d in sorted(dirnames):
+        if d.endswith(".xcassets"):
+            rel = os.path.relpath(os.path.join(dirpath, d), SRC_ROOT)
+            RESOURCE_FILES.append(rel)
+    
+    # Remove .xcassets from dirnames to prevent walk from going inside them
+    dirnames[:] = [d for d in dirnames if not d.endswith(".xcassets")]
+    
     for fn in sorted(filenames):
         rel = os.path.relpath(os.path.join(dirpath, fn), SRC_ROOT)
         if fn.endswith(".swift"):
             SWIFT_FILES.append(rel)
-        elif fn.endswith(".plist") or fn.endswith(".xcassets"):
+        elif (fn.endswith(".plist") and fn != "Info.plist") or fn.endswith(".storyboard"):
             RESOURCE_FILES.append(rel)
 
 # Also include top-level Info.plist explicitly
