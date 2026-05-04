@@ -1,4 +1,4 @@
-#if canImport(UIKit) && (os(iOS) || os(tvOS))
+#if os(iOS)
 import UIKit
 
 // MARK: - ScenarioLibrary
@@ -9,7 +9,7 @@ import UIKit
 final class ScenarioLibrary {
 
     weak var playgroundCoordinator: PlaygroundCoordinator?
-    private let networkSimulator: NetworkSimulator
+    let networkSimulator: NetworkSimulator
 
     init(networkSimulator: NetworkSimulator) {
         self.networkSimulator = networkSimulator

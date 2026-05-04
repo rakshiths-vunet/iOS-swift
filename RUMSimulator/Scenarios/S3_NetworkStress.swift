@@ -1,4 +1,4 @@
-#if canImport(UIKit) && (os(iOS) || os(tvOS))
+#if os(iOS)
 import Foundation
 
 // MARK: - S3: Network Stress Flow
@@ -15,23 +15,23 @@ extension ScenarioLibrary {
                     nav?.openNetworkPlayground()
                 }, delay: 0.5),
                 ScenarioStep(label: "Fire GET /get", action: {
-                    Task { _ = await net.fire(.get) }
+                    Task { _ = await net.fire(HTTPBinEndpoint.get) }
                 }, delay: 0.3),
                 ScenarioStep(label: "Fire GET /delay/3", action: {
-                    Task { _ = await net.fire(.delay(3)) }
+                    Task { _ = await net.fire(HTTPBinEndpoint.delay(3)) }
                 }, delay: 0.3),
                 ScenarioStep(label: "Fire GET /status/500", action: {
-                    Task { _ = await net.fire(.status(500)) }
+                    Task { _ = await net.fire(HTTPBinEndpoint.status(500)) }
                 }, delay: 0.3),
                 ScenarioStep(label: "Fire invalid domain (DNS fail)", action: {
-                    Task { _ = await net.fire(.invalidDomain) }
+                    Task { _ = await net.fire(HTTPBinEndpoint.invalidDomain) }
                 }, delay: 0.3),
                 ScenarioStep(label: "Fire 10 concurrent calls", action: {
                     Task {
                         let endpoints: [HTTPBinEndpoint] = [
-                            .get, .get, .delay(1), .status(404),
-                            .get, .status(500), .delay(2), .get,
-                            .invalidDomain, .get
+                            HTTPBinEndpoint.get, HTTPBinEndpoint.get, HTTPBinEndpoint.delay(1), HTTPBinEndpoint.status(404),
+                            HTTPBinEndpoint.get, HTTPBinEndpoint.status(500), HTTPBinEndpoint.delay(2), HTTPBinEndpoint.get,
+                            HTTPBinEndpoint.invalidDomain, HTTPBinEndpoint.get
                         ]
                         _ = await net.fireParallel(endpoints)
                     }

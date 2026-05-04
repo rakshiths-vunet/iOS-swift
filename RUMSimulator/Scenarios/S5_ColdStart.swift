@@ -1,4 +1,4 @@
-#if canImport(UIKit) && (os(iOS) || os(tvOS))
+#if os(iOS)
 import Foundation
 
 // MARK: - S5: Cold Start Simulation
@@ -16,13 +16,13 @@ extension ScenarioLibrary {
                     // Navigation (UIKit)
                     nav?.navigationPlaygroundVC?.pushLevel()
                     // Concurrent network call — fired at same time
-                    Task { _ = await net.fire(.get) }
+                    Task { _ = await net.fire(HTTPBinEndpoint.get) }
                 }, delay: 0.5),
                 ScenarioStep(label: "Cold Start: Second push", action: {
                     nav?.navigationPlaygroundVC?.pushLevel()
                 }, delay: 0.4),
                 ScenarioStep(label: "Cold Start: Network call 2", action: {
-                    Task { _ = await net.fire(.delay(1)) }
+                    Task { _ = await net.fire(HTTPBinEndpoint.delay(1)) }
                 }, delay: 1.5),
                 ScenarioStep(label: "Cold Start: Pop to root", action: {
                     nav?.navigationPlaygroundVC?.popToRoot()

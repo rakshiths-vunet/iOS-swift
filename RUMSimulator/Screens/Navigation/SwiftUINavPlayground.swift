@@ -1,4 +1,4 @@
-#if canImport(UIKit) && (os(iOS) || os(tvOS))
+#if os(iOS)
 import SwiftUI
 
 // MARK: - SwiftUINavPlayground
