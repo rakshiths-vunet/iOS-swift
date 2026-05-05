@@ -1,5 +1,6 @@
 #if os(iOS)
 import UIKit
+import vuTelemetry
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -12,6 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         // SDK link point: auto-instrumentation SDK is linked here but never called explicitly.
         // All telemetry must come from UIKit/URLSession/OS lifecycle auto-capture only.
+
+        OtelManager.shared.initialize(endpoint: URL(string: "http://10.1.92.124:4318")!)
+
+        
+        
+        
+        CrashReportingManager.shared.setupPLCrashReporter()
+        AppLifecycleTracker.shared.startTracking()
+        UIKitTracker.shared.observeViewControllers()
+        
         return true
     }
 

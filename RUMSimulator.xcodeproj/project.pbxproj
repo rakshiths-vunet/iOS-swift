@@ -3,88 +3,89 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		805D27B25B01161DF312D5DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281DB7DB0BA79362A4590C36 /* AppDelegate.swift */; };
-		5AD0989546BECD195A143022 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26171BDB7B7B7F146DD91BCF /* SceneDelegate.swift */; };
-		DF23B5D78E1B48CD931B0F23 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6467CEA6F4F73F2D107620 /* AppCoordinator.swift */; };
-		144784D32CFB182E53C6FF97 /* PlaygroundCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA33A26DF113D6F334D2B0F7 /* PlaygroundCoordinator.swift */; };
-		36F72E9665FB369EBCC930A3 /* EngineState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D735883F5E7315B7784CB35 /* EngineState.swift */; };
-		4E6BAC2E6E36542A23C04CE1 /* LoadGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C0B74710B0E77DB033BC1 /* LoadGenerator.swift */; };
-		FFC492DDC09590BCD6145FFE /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3CA61024A6E6C1D3D7E5B9 /* Scenario.swift */; };
-		F249CCCA2CB60B568263A6DC /* ScenarioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D045B0E9DFE4E9D0062024 /* ScenarioEngine.swift */; };
-		46D9373AF12B62D50DFD13F2 /* ScenarioLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86583711159A8B830708A463 /* ScenarioLibrary.swift */; };
-		6BE6B7341D38FA74936DD10F /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9523150CC118E60D03EB6B85 /* ModalViewController.swift */; };
-		B9E065077C06DF9A0B6CA144 /* NavLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B44E1294F48DF9169D8AE /* NavLevelViewController.swift */; };
-		14C4BD9B53F04B65E0D37319 /* SwiftUINavPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAA88B2528DA97810FFAA5A /* SwiftUINavPlayground.swift */; };
-		BC52D28E4F05615D759CCF95 /* UIKitNavPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7BA9526400132489B3119 /* UIKitNavPlaygroundVC.swift */; };
-		C9A0E82FB0FE22EC5804A596 /* CrashPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE87B1ECC8A0391F72EE1100 /* CrashPlaygroundVC.swift */; };
-		1D2DA5C6B852BAECC5742EE4 /* DebugPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABE16381EF55868173D498B /* DebugPanelViewController.swift */; };
-		997156694A1F4CAF3D551FB3 /* DebugPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFF90580E06F3764A064C6B /* DebugPanelViewModel.swift */; };
-		16CFC85C6E24C3A36FE2D317 /* NetworkPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC1AA8E9E694FD42F1B58B /* NetworkPlaygroundVC.swift */; };
-		C80928DB6AE28898A464934A /* GestureSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FDCE01D8C796422EE13E2C /* GestureSimulator.swift */; };
-		6B0689FFB810E18276BCE26A /* InteractionPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DE2FCCAAA7987D9858E50 /* InteractionPlaygroundVC.swift */; };
-		DFDB35B4F02979CD04CEEFDE /* LifecyclePlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642B32CB5ABFC3348FC047A0 /* LifecyclePlaygroundVC.swift */; };
-		64A907C0F3DC8E0BD34EB524 /* ControlPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB6A985C494FDFE7CA66AC /* ControlPanelViewController.swift */; };
-		DE50E9A3ABAEEC1D1B0D9167 /* ControlPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DB99AEF222C7B2504822B /* ControlPanelViewModel.swift */; };
-		BA78DC3D99803BCE101BB7CB /* EventLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA4A39B5A2EC711CEB77AAC /* EventLogger.swift */; };
-		B0D3604D6DBC946A78C5B46E /* LogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D2AAA02EFB702A3F299CC0 /* LogEvent.swift */; };
-		15889BD7172CD514E296F839 /* LogFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E948338B7596F7E43DE87 /* LogFileManager.swift */; };
-		6133C7CF22809EE4FCC77D90 /* LogViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA744ED73BF42DE0F959D92 /* LogViewerViewController.swift */; };
-		8C9EC2B46D371B56E19188BA /* HTTPBinEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47AD1C4FB52264A4F0F111 /* HTTPBinEndpoints.swift */; };
 		09327AA7A7AF4264F92E40C2 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36D0786F3A265263CD6B3 /* NetworkResult.swift */; };
+		144784D32CFB182E53C6FF97 /* PlaygroundCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA33A26DF113D6F334D2B0F7 /* PlaygroundCoordinator.swift */; };
+		14C4BD9B53F04B65E0D37319 /* SwiftUINavPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAA88B2528DA97810FFAA5A /* SwiftUINavPlayground.swift */; };
+		15889BD7172CD514E296F839 /* LogFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E948338B7596F7E43DE87 /* LogFileManager.swift */; };
+		16CFC85C6E24C3A36FE2D317 /* NetworkPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC1AA8E9E694FD42F1B58B /* NetworkPlaygroundVC.swift */; };
+		1D2DA5C6B852BAECC5742EE4 /* DebugPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABE16381EF55868173D498B /* DebugPanelViewController.swift */; };
 		1F0A840CE297C5760EFEFE0C /* NetworkSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A34359941FA5B1E300E4AF /* NetworkSimulator.swift */; };
-		5DE7E98CE53B97A96BF1F34D /* S1_BasicNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518BD176A9AE745490E4C78 /* S1_BasicNavigation.swift */; };
-		EA0AA30AC3124E2C81B964B6 /* S2_RapidInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE80C1F3A8B8D60BFE3A0F6 /* S2_RapidInteraction.swift */; };
-		4BD095E3B2F1ADFC14FC7B8F /* S3_NetworkStress.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF9035B45CF865C5AA8512E /* S3_NetworkStress.swift */; };
-		DE19361F82FFC9A70B0CAC99 /* S4_SessionRestart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18706362B6E85EBEABD7378 /* S4_SessionRestart.swift */; };
-		7FF25168F571DAF8807FF4F2 /* S5_ColdStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC849FE69657CA8B6D2B1813 /* S5_ColdStart.swift */; };
 		2A9ECAB041C4427DD58304CC /* S6_MixedLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01812D4BE3BD0837A42AE2FC /* S6_MixedLoad.swift */; };
-		C1C97432A9D097AA2E593742 /* LifecycleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8595AFF9964CF45BE8F673C /* LifecycleObserver.swift */; };
+		36F72E9665FB369EBCC930A3 /* EngineState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D735883F5E7315B7784CB35 /* EngineState.swift */; };
+		46D9373AF12B62D50DFD13F2 /* ScenarioLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86583711159A8B830708A463 /* ScenarioLibrary.swift */; };
+		4BD095E3B2F1ADFC14FC7B8F /* S3_NetworkStress.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF9035B45CF865C5AA8512E /* S3_NetworkStress.swift */; };
+		4E6BAC2E6E36542A23C04CE1 /* LoadGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C0B74710B0E77DB033BC1 /* LoadGenerator.swift */; };
+		5AD0989546BECD195A143022 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26171BDB7B7B7F146DD91BCF /* SceneDelegate.swift */; };
+		5DE7E98CE53B97A96BF1F34D /* S1_BasicNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9518BD176A9AE745490E4C78 /* S1_BasicNavigation.swift */; };
+		6133C7CF22809EE4FCC77D90 /* LogViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA744ED73BF42DE0F959D92 /* LogViewerViewController.swift */; };
+		64A907C0F3DC8E0BD34EB524 /* ControlPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5FB6A985C494FDFE7CA66AC /* ControlPanelViewController.swift */; };
+		6B0689FFB810E18276BCE26A /* InteractionPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682DE2FCCAAA7987D9858E50 /* InteractionPlaygroundVC.swift */; };
+		6BE6B7341D38FA74936DD10F /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9523150CC118E60D03EB6B85 /* ModalViewController.swift */; };
+		7FF25168F571DAF8807FF4F2 /* S5_ColdStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC849FE69657CA8B6D2B1813 /* S5_ColdStart.swift */; };
+		805D27B25B01161DF312D5DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281DB7DB0BA79362A4590C36 /* AppDelegate.swift */; };
+		8C9EC2B46D371B56E19188BA /* HTTPBinEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47AD1C4FB52264A4F0F111 /* HTTPBinEndpoints.swift */; };
+		90D6D2F22FA9C0EB007977BE /* vuTelemetry in Frameworks */ = {isa = PBXBuildFile; productRef = 90D6D2F12FA9C0EB007977BE /* vuTelemetry */; };
+		997156694A1F4CAF3D551FB3 /* DebugPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFF90580E06F3764A064C6B /* DebugPanelViewModel.swift */; };
 		A4E74449693B4D6DEC278CCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AB55363148003992F62A8EC /* Assets.xcassets */; };
+		B0D3604D6DBC946A78C5B46E /* LogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D2AAA02EFB702A3F299CC0 /* LogEvent.swift */; };
+		B9E065077C06DF9A0B6CA144 /* NavLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B44E1294F48DF9169D8AE /* NavLevelViewController.swift */; };
+		BA78DC3D99803BCE101BB7CB /* EventLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA4A39B5A2EC711CEB77AAC /* EventLogger.swift */; };
+		BC52D28E4F05615D759CCF95 /* UIKitNavPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F7BA9526400132489B3119 /* UIKitNavPlaygroundVC.swift */; };
+		C1C97432A9D097AA2E593742 /* LifecycleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8595AFF9964CF45BE8F673C /* LifecycleObserver.swift */; };
+		C80928DB6AE28898A464934A /* GestureSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FDCE01D8C796422EE13E2C /* GestureSimulator.swift */; };
+		C9A0E82FB0FE22EC5804A596 /* CrashPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE87B1ECC8A0391F72EE1100 /* CrashPlaygroundVC.swift */; };
+		DE19361F82FFC9A70B0CAC99 /* S4_SessionRestart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18706362B6E85EBEABD7378 /* S4_SessionRestart.swift */; };
+		DE50E9A3ABAEEC1D1B0D9167 /* ControlPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DB99AEF222C7B2504822B /* ControlPanelViewModel.swift */; };
+		DF23B5D78E1B48CD931B0F23 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6467CEA6F4F73F2D107620 /* AppCoordinator.swift */; };
+		DFDB35B4F02979CD04CEEFDE /* LifecyclePlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642B32CB5ABFC3348FC047A0 /* LifecyclePlaygroundVC.swift */; };
+		EA0AA30AC3124E2C81B964B6 /* S2_RapidInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE80C1F3A8B8D60BFE3A0F6 /* S2_RapidInteraction.swift */; };
+		F249CCCA2CB60B568263A6DC /* ScenarioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D045B0E9DFE4E9D0062024 /* ScenarioEngine.swift */; };
+		FFC492DDC09590BCD6145FFE /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3CA61024A6E6C1D3D7E5B9 /* Scenario.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5141EFFF35ACD6C51F274E4D /* RUMSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RUMSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		281DB7DB0BA79362A4590C36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		26171BDB7B7B7F146DD91BCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1C6467CEA6F4F73F2D107620 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppCoordinator.swift; path = Coordinator/AppCoordinator.swift; sourceTree = "<group>"; };
-		AA33A26DF113D6F334D2B0F7 /* PlaygroundCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaygroundCoordinator.swift; path = Coordinator/PlaygroundCoordinator.swift; sourceTree = "<group>"; };
-		2D735883F5E7315B7784CB35 /* EngineState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EngineState.swift; path = Engine/EngineState.swift; sourceTree = "<group>"; };
-		784C0B74710B0E77DB033BC1 /* LoadGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadGenerator.swift; path = Engine/LoadGenerator.swift; sourceTree = "<group>"; };
-		DF3CA61024A6E6C1D3D7E5B9 /* Scenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Scenario.swift; path = Engine/Scenario.swift; sourceTree = "<group>"; };
-		70D045B0E9DFE4E9D0062024 /* ScenarioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScenarioEngine.swift; path = Engine/ScenarioEngine.swift; sourceTree = "<group>"; };
-		86583711159A8B830708A463 /* ScenarioLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScenarioLibrary.swift; path = Engine/ScenarioLibrary.swift; sourceTree = "<group>"; };
-		9523150CC118E60D03EB6B85 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModalViewController.swift; path = Screens/Navigation/ModalViewController.swift; sourceTree = "<group>"; };
-		4C7B44E1294F48DF9169D8AE /* NavLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavLevelViewController.swift; path = Screens/Navigation/NavLevelViewController.swift; sourceTree = "<group>"; };
-		DFAA88B2528DA97810FFAA5A /* SwiftUINavPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftUINavPlayground.swift; path = Screens/Navigation/SwiftUINavPlayground.swift; sourceTree = "<group>"; };
-		D6F7BA9526400132489B3119 /* UIKitNavPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIKitNavPlaygroundVC.swift; path = Screens/Navigation/UIKitNavPlaygroundVC.swift; sourceTree = "<group>"; };
-		BE87B1ECC8A0391F72EE1100 /* CrashPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CrashPlaygroundVC.swift; path = Screens/CrashError/CrashPlaygroundVC.swift; sourceTree = "<group>"; };
-		8ABE16381EF55868173D498B /* DebugPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugPanelViewController.swift; path = Screens/DebugPanel/DebugPanelViewController.swift; sourceTree = "<group>"; };
-		FBFF90580E06F3764A064C6B /* DebugPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugPanelViewModel.swift; path = Screens/DebugPanel/DebugPanelViewModel.swift; sourceTree = "<group>"; };
-		72EC1AA8E9E694FD42F1B58B /* NetworkPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkPlaygroundVC.swift; path = Screens/Network/NetworkPlaygroundVC.swift; sourceTree = "<group>"; };
-		45FDCE01D8C796422EE13E2C /* GestureSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GestureSimulator.swift; path = Screens/Interaction/GestureSimulator.swift; sourceTree = "<group>"; };
-		682DE2FCCAAA7987D9858E50 /* InteractionPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InteractionPlaygroundVC.swift; path = Screens/Interaction/InteractionPlaygroundVC.swift; sourceTree = "<group>"; };
-		642B32CB5ABFC3348FC047A0 /* LifecyclePlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LifecyclePlaygroundVC.swift; path = Screens/Lifecycle/LifecyclePlaygroundVC.swift; sourceTree = "<group>"; };
-		A5FB6A985C494FDFE7CA66AC /* ControlPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ControlPanelViewController.swift; path = Screens/ControlPanel/ControlPanelViewController.swift; sourceTree = "<group>"; };
-		A40DB99AEF222C7B2504822B /* ControlPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ControlPanelViewModel.swift; path = Screens/ControlPanel/ControlPanelViewModel.swift; sourceTree = "<group>"; };
-		1AA4A39B5A2EC711CEB77AAC /* EventLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventLogger.swift; path = Logging/EventLogger.swift; sourceTree = "<group>"; };
-		51D2AAA02EFB702A3F299CC0 /* LogEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogEvent.swift; path = Logging/LogEvent.swift; sourceTree = "<group>"; };
-		DA6E948338B7596F7E43DE87 /* LogFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogFileManager.swift; path = Logging/LogFileManager.swift; sourceTree = "<group>"; };
-		1AA744ED73BF42DE0F959D92 /* LogViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogViewerViewController.swift; path = Logging/LogViewerViewController.swift; sourceTree = "<group>"; };
-		FB47AD1C4FB52264A4F0F111 /* HTTPBinEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPBinEndpoints.swift; path = Network/HTTPBinEndpoints.swift; sourceTree = "<group>"; };
-		C4C36D0786F3A265263CD6B3 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkResult.swift; path = Network/NetworkResult.swift; sourceTree = "<group>"; };
-		71A34359941FA5B1E300E4AF /* NetworkSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkSimulator.swift; path = Network/NetworkSimulator.swift; sourceTree = "<group>"; };
-		9518BD176A9AE745490E4C78 /* S1_BasicNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S1_BasicNavigation.swift; path = Scenarios/S1_BasicNavigation.swift; sourceTree = "<group>"; };
-		9CE80C1F3A8B8D60BFE3A0F6 /* S2_RapidInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S2_RapidInteraction.swift; path = Scenarios/S2_RapidInteraction.swift; sourceTree = "<group>"; };
-		DDF9035B45CF865C5AA8512E /* S3_NetworkStress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S3_NetworkStress.swift; path = Scenarios/S3_NetworkStress.swift; sourceTree = "<group>"; };
-		C18706362B6E85EBEABD7378 /* S4_SessionRestart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S4_SessionRestart.swift; path = Scenarios/S4_SessionRestart.swift; sourceTree = "<group>"; };
-		BC849FE69657CA8B6D2B1813 /* S5_ColdStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S5_ColdStart.swift; path = Scenarios/S5_ColdStart.swift; sourceTree = "<group>"; };
 		01812D4BE3BD0837A42AE2FC /* S6_MixedLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S6_MixedLoad.swift; path = Scenarios/S6_MixedLoad.swift; sourceTree = "<group>"; };
-		E8595AFF9964CF45BE8F673C /* LifecycleObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LifecycleObserver.swift; path = Lifecycle/LifecycleObserver.swift; sourceTree = "<group>"; };
+		1AA4A39B5A2EC711CEB77AAC /* EventLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventLogger.swift; path = Logging/EventLogger.swift; sourceTree = "<group>"; };
+		1AA744ED73BF42DE0F959D92 /* LogViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogViewerViewController.swift; path = Logging/LogViewerViewController.swift; sourceTree = "<group>"; };
+		1C6467CEA6F4F73F2D107620 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppCoordinator.swift; path = Coordinator/AppCoordinator.swift; sourceTree = "<group>"; };
+		26171BDB7B7B7F146DD91BCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		281DB7DB0BA79362A4590C36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2D735883F5E7315B7784CB35 /* EngineState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EngineState.swift; path = Engine/EngineState.swift; sourceTree = "<group>"; };
+		45FDCE01D8C796422EE13E2C /* GestureSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GestureSimulator.swift; path = Screens/Interaction/GestureSimulator.swift; sourceTree = "<group>"; };
+		4C7B44E1294F48DF9169D8AE /* NavLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavLevelViewController.swift; path = Screens/Navigation/NavLevelViewController.swift; sourceTree = "<group>"; };
+		5141EFFF35ACD6C51F274E4D /* RUMSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RUMSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		51D2AAA02EFB702A3F299CC0 /* LogEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogEvent.swift; path = Logging/LogEvent.swift; sourceTree = "<group>"; };
+		642B32CB5ABFC3348FC047A0 /* LifecyclePlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LifecyclePlaygroundVC.swift; path = Screens/Lifecycle/LifecyclePlaygroundVC.swift; sourceTree = "<group>"; };
+		682DE2FCCAAA7987D9858E50 /* InteractionPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InteractionPlaygroundVC.swift; path = Screens/Interaction/InteractionPlaygroundVC.swift; sourceTree = "<group>"; };
+		70D045B0E9DFE4E9D0062024 /* ScenarioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScenarioEngine.swift; path = Engine/ScenarioEngine.swift; sourceTree = "<group>"; };
+		71A34359941FA5B1E300E4AF /* NetworkSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkSimulator.swift; path = Network/NetworkSimulator.swift; sourceTree = "<group>"; };
+		72EC1AA8E9E694FD42F1B58B /* NetworkPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkPlaygroundVC.swift; path = Screens/Network/NetworkPlaygroundVC.swift; sourceTree = "<group>"; };
+		784C0B74710B0E77DB033BC1 /* LoadGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadGenerator.swift; path = Engine/LoadGenerator.swift; sourceTree = "<group>"; };
 		7AB55363148003992F62A8EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
+		86583711159A8B830708A463 /* ScenarioLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScenarioLibrary.swift; path = Engine/ScenarioLibrary.swift; sourceTree = "<group>"; };
+		8ABE16381EF55868173D498B /* DebugPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugPanelViewController.swift; path = Screens/DebugPanel/DebugPanelViewController.swift; sourceTree = "<group>"; };
+		9518BD176A9AE745490E4C78 /* S1_BasicNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S1_BasicNavigation.swift; path = Scenarios/S1_BasicNavigation.swift; sourceTree = "<group>"; };
+		9523150CC118E60D03EB6B85 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModalViewController.swift; path = Screens/Navigation/ModalViewController.swift; sourceTree = "<group>"; };
+		9CE80C1F3A8B8D60BFE3A0F6 /* S2_RapidInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S2_RapidInteraction.swift; path = Scenarios/S2_RapidInteraction.swift; sourceTree = "<group>"; };
+		A40DB99AEF222C7B2504822B /* ControlPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ControlPanelViewModel.swift; path = Screens/ControlPanel/ControlPanelViewModel.swift; sourceTree = "<group>"; };
+		A5FB6A985C494FDFE7CA66AC /* ControlPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ControlPanelViewController.swift; path = Screens/ControlPanel/ControlPanelViewController.swift; sourceTree = "<group>"; };
+		AA33A26DF113D6F334D2B0F7 /* PlaygroundCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaygroundCoordinator.swift; path = Coordinator/PlaygroundCoordinator.swift; sourceTree = "<group>"; };
+		BC849FE69657CA8B6D2B1813 /* S5_ColdStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S5_ColdStart.swift; path = Scenarios/S5_ColdStart.swift; sourceTree = "<group>"; };
+		BE87B1ECC8A0391F72EE1100 /* CrashPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CrashPlaygroundVC.swift; path = Screens/CrashError/CrashPlaygroundVC.swift; sourceTree = "<group>"; };
+		C18706362B6E85EBEABD7378 /* S4_SessionRestart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S4_SessionRestart.swift; path = Scenarios/S4_SessionRestart.swift; sourceTree = "<group>"; };
+		C4C36D0786F3A265263CD6B3 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkResult.swift; path = Network/NetworkResult.swift; sourceTree = "<group>"; };
+		D6F7BA9526400132489B3119 /* UIKitNavPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIKitNavPlaygroundVC.swift; path = Screens/Navigation/UIKitNavPlaygroundVC.swift; sourceTree = "<group>"; };
+		DA6E948338B7596F7E43DE87 /* LogFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogFileManager.swift; path = Logging/LogFileManager.swift; sourceTree = "<group>"; };
+		DDF9035B45CF865C5AA8512E /* S3_NetworkStress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S3_NetworkStress.swift; path = Scenarios/S3_NetworkStress.swift; sourceTree = "<group>"; };
+		DF3CA61024A6E6C1D3D7E5B9 /* Scenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Scenario.swift; path = Engine/Scenario.swift; sourceTree = "<group>"; };
+		DFAA88B2528DA97810FFAA5A /* SwiftUINavPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftUINavPlayground.swift; path = Screens/Navigation/SwiftUINavPlayground.swift; sourceTree = "<group>"; };
+		E8595AFF9964CF45BE8F673C /* LifecycleObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LifecycleObserver.swift; path = Lifecycle/LifecycleObserver.swift; sourceTree = "<group>"; };
+		FB47AD1C4FB52264A4F0F111 /* HTTPBinEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPBinEndpoints.swift; path = Network/HTTPBinEndpoints.swift; sourceTree = "<group>"; };
+		FBFF90580E06F3764A064C6B /* DebugPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugPanelViewModel.swift; path = Screens/DebugPanel/DebugPanelViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90D6D2F22FA9C0EB007977BE /* vuTelemetry in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,14 +106,6 @@
 				1369CE758DE91ECD50B7E938 /* RUMSimulator */,
 				B88D7E26791946AEFDCC8BB7 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		B88D7E26791946AEFDCC8BB7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5141EFFF35ACD6C51F274E4D /* RUMSimulator.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		1369CE758DE91ECD50B7E938 /* RUMSimulator */ = {
@@ -128,66 +122,16 @@
 				281DB7DB0BA79362A4590C36 /* AppDelegate.swift */,
 				26171BDB7B7B7F146DD91BCF /* SceneDelegate.swift */,
 			);
-			name = RUMSimulator;
 			path = RUMSimulator;
 			sourceTree = "<group>";
 		};
-		68F2F9C5CF24D992E1729F51 /* Coordinator */ = {
+		148158ADA252BDEBB24B3D7C /* DebugPanel */ = {
 			isa = PBXGroup;
 			children = (
-				1C6467CEA6F4F73F2D107620 /* AppCoordinator.swift */,
-				AA33A26DF113D6F334D2B0F7 /* PlaygroundCoordinator.swift */,
+				8ABE16381EF55868173D498B /* DebugPanelViewController.swift */,
+				FBFF90580E06F3764A064C6B /* DebugPanelViewModel.swift */,
 			);
-			name = Coordinator;
-			sourceTree = "<group>";
-		};
-		CFD3981E9993F4D47575002C /* Engine */ = {
-			isa = PBXGroup;
-			children = (
-				2D735883F5E7315B7784CB35 /* EngineState.swift */,
-				784C0B74710B0E77DB033BC1 /* LoadGenerator.swift */,
-				DF3CA61024A6E6C1D3D7E5B9 /* Scenario.swift */,
-				70D045B0E9DFE4E9D0062024 /* ScenarioEngine.swift */,
-				86583711159A8B830708A463 /* ScenarioLibrary.swift */,
-			);
-			name = Engine;
-			sourceTree = "<group>";
-		};
-		97CE245F107A2E9830993C94 /* Lifecycle */ = {
-			isa = PBXGroup;
-			children = (
-				E8595AFF9964CF45BE8F673C /* LifecycleObserver.swift */,
-			);
-			name = Lifecycle;
-			sourceTree = "<group>";
-		};
-		97185CB61B7134E43B522294 /* Logging */ = {
-			isa = PBXGroup;
-			children = (
-				1AA4A39B5A2EC711CEB77AAC /* EventLogger.swift */,
-				51D2AAA02EFB702A3F299CC0 /* LogEvent.swift */,
-				DA6E948338B7596F7E43DE87 /* LogFileManager.swift */,
-				1AA744ED73BF42DE0F959D92 /* LogViewerViewController.swift */,
-			);
-			name = Logging;
-			sourceTree = "<group>";
-		};
-		BCB471A99A04B6AEF1B1D46C /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				FB47AD1C4FB52264A4F0F111 /* HTTPBinEndpoints.swift */,
-				C4C36D0786F3A265263CD6B3 /* NetworkResult.swift */,
-				71A34359941FA5B1E300E4AF /* NetworkSimulator.swift */,
-			);
-			name = Network;
-			sourceTree = "<group>";
-		};
-		B642DCC00EC1A184662227C2 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				7AB55363148003992F62A8EC /* Assets.xcassets */,
-			);
-			name = Resources;
+			name = DebugPanel;
 			sourceTree = "<group>";
 		};
 		329AD13B687B40B355407E61 /* Scenarios */ = {
@@ -203,44 +147,32 @@
 			name = Scenarios;
 			sourceTree = "<group>";
 		};
-		AEB4B01D25995FBE84B50408 /* Screens */ = {
+		68F2F9C5CF24D992E1729F51 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				F95957238E5814F06917D51C /* ControlPanel */,
-				C9E007029F701324ADF8DEEA /* CrashError */,
-				148158ADA252BDEBB24B3D7C /* DebugPanel */,
-				A46F0D46D07D5066D16E9858 /* Interaction */,
-				AC4405CC6739D0B332FF49DB /* Lifecycle */,
-				C6767BFABEF5FD678FD73644 /* Navigation */,
-				F519AC4ABD03D40DA229CD7F /* Network */,
+				1C6467CEA6F4F73F2D107620 /* AppCoordinator.swift */,
+				AA33A26DF113D6F334D2B0F7 /* PlaygroundCoordinator.swift */,
 			);
-			name = Screens;
+			name = Coordinator;
 			sourceTree = "<group>";
 		};
-		F95957238E5814F06917D51C /* ControlPanel */ = {
+		97185CB61B7134E43B522294 /* Logging */ = {
 			isa = PBXGroup;
 			children = (
-				A5FB6A985C494FDFE7CA66AC /* ControlPanelViewController.swift */,
-				A40DB99AEF222C7B2504822B /* ControlPanelViewModel.swift */,
+				1AA4A39B5A2EC711CEB77AAC /* EventLogger.swift */,
+				51D2AAA02EFB702A3F299CC0 /* LogEvent.swift */,
+				DA6E948338B7596F7E43DE87 /* LogFileManager.swift */,
+				1AA744ED73BF42DE0F959D92 /* LogViewerViewController.swift */,
 			);
-			name = ControlPanel;
+			name = Logging;
 			sourceTree = "<group>";
 		};
-		C9E007029F701324ADF8DEEA /* CrashError */ = {
+		97CE245F107A2E9830993C94 /* Lifecycle */ = {
 			isa = PBXGroup;
 			children = (
-				BE87B1ECC8A0391F72EE1100 /* CrashPlaygroundVC.swift */,
+				E8595AFF9964CF45BE8F673C /* LifecycleObserver.swift */,
 			);
-			name = CrashError;
-			sourceTree = "<group>";
-		};
-		148158ADA252BDEBB24B3D7C /* DebugPanel */ = {
-			isa = PBXGroup;
-			children = (
-				8ABE16381EF55868173D498B /* DebugPanelViewController.swift */,
-				FBFF90580E06F3764A064C6B /* DebugPanelViewModel.swift */,
-			);
-			name = DebugPanel;
+			name = Lifecycle;
 			sourceTree = "<group>";
 		};
 		A46F0D46D07D5066D16E9858 /* Interaction */ = {
@@ -260,6 +192,46 @@
 			name = Lifecycle;
 			sourceTree = "<group>";
 		};
+		AEB4B01D25995FBE84B50408 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F95957238E5814F06917D51C /* ControlPanel */,
+				C9E007029F701324ADF8DEEA /* CrashError */,
+				148158ADA252BDEBB24B3D7C /* DebugPanel */,
+				A46F0D46D07D5066D16E9858 /* Interaction */,
+				AC4405CC6739D0B332FF49DB /* Lifecycle */,
+				C6767BFABEF5FD678FD73644 /* Navigation */,
+				F519AC4ABD03D40DA229CD7F /* Network */,
+			);
+			name = Screens;
+			sourceTree = "<group>";
+		};
+		B642DCC00EC1A184662227C2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7AB55363148003992F62A8EC /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B88D7E26791946AEFDCC8BB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5141EFFF35ACD6C51F274E4D /* RUMSimulator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BCB471A99A04B6AEF1B1D46C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FB47AD1C4FB52264A4F0F111 /* HTTPBinEndpoints.swift */,
+				C4C36D0786F3A265263CD6B3 /* NetworkResult.swift */,
+				71A34359941FA5B1E300E4AF /* NetworkSimulator.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		C6767BFABEF5FD678FD73644 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,12 +243,41 @@
 			name = Navigation;
 			sourceTree = "<group>";
 		};
+		C9E007029F701324ADF8DEEA /* CrashError */ = {
+			isa = PBXGroup;
+			children = (
+				BE87B1ECC8A0391F72EE1100 /* CrashPlaygroundVC.swift */,
+			);
+			name = CrashError;
+			sourceTree = "<group>";
+		};
+		CFD3981E9993F4D47575002C /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				2D735883F5E7315B7784CB35 /* EngineState.swift */,
+				784C0B74710B0E77DB033BC1 /* LoadGenerator.swift */,
+				DF3CA61024A6E6C1D3D7E5B9 /* Scenario.swift */,
+				70D045B0E9DFE4E9D0062024 /* ScenarioEngine.swift */,
+				86583711159A8B830708A463 /* ScenarioLibrary.swift */,
+			);
+			name = Engine;
+			sourceTree = "<group>";
+		};
 		F519AC4ABD03D40DA229CD7F /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				72EC1AA8E9E694FD42F1B58B /* NetworkPlaygroundVC.swift */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		F95957238E5814F06917D51C /* ControlPanel */ = {
+			isa = PBXGroup;
+			children = (
+				A5FB6A985C494FDFE7CA66AC /* ControlPanelViewController.swift */,
+				A40DB99AEF222C7B2504822B /* ControlPanelViewModel.swift */,
+			);
+			name = ControlPanel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +323,9 @@
 				Base,
 			);
 			mainGroup = 0A85897F1A32FE9B91C081CD;
+			packageReferences = (
+				90D6D2F02FA9C0EB007977BE /* XCLocalSwiftPackageReference "../vuTelemetry-iOS" */,
+			);
 			productRefGroup = B88D7E26791946AEFDCC8BB7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -389,6 +393,17 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		5A416A9B6479265C0B391FB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		6210ABF9E9F37BC71A6E0340 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -408,29 +423,18 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				MACOSX_DEPLOYMENT_TARGET = "";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
-		};
-		5A416A9B6479265C0B391FB0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-			};
-			name = Release;
 		};
 		6E039A50973EC2F246E7CB36 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -441,10 +445,10 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "RUMSimulator/Info.plist";
+				INFOPLIST_FILE = RUMSimulator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rumsimulator.RUMSimulator";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rumsimulator.RUMSimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -460,10 +464,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "RUMSimulator/Info.plist";
+				INFOPLIST_FILE = RUMSimulator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rumsimulator.RUMSimulator";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rumsimulator.RUMSimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -476,15 +480,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2304916CBAF46E633AC86A9C /* Build configuration list for PBXProject "RUMSimulator" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6210ABF9E9F37BC71A6E0340 /* Debug */,
-				5A416A9B6479265C0B391FB0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		1C377C0592C559B92F8CA329 /* Build configuration list for PBXNativeTarget "RUMSimulator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -494,8 +489,30 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		2304916CBAF46E633AC86A9C /* Build configuration list for PBXProject "RUMSimulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6210ABF9E9F37BC71A6E0340 /* Debug */,
+				5A416A9B6479265C0B391FB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		90D6D2F02FA9C0EB007977BE /* XCLocalSwiftPackageReference "../vuTelemetry-iOS" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../vuTelemetry-iOS";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		90D6D2F12FA9C0EB007977BE /* vuTelemetry */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = vuTelemetry;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6A714FD6B079E972445851C7 /* Project object */;
 }
