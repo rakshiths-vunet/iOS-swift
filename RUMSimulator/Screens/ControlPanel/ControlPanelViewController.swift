@@ -181,6 +181,121 @@ final class ControlPanelViewController: UIViewController {
         // Playground shortcuts
         contentStack.addArrangedSubview(sectionHeader("Playgrounds"))
         contentStack.addArrangedSubview(buildPlaygroundGrid())
+
+        // Metadata Matrix Section
+        contentStack.addArrangedSubview(sectionHeader("Manual Metadata Matrix"))
+        contentStack.addArrangedSubview(buildMetadataMatrixView())
+    }
+
+    private func buildMetadataMatrixView() -> UIView {
+        let card = makeCard()
+        
+        let triggerLabel = sectionHeader("Trigger")
+        let triggerSelector = UISegmentedControl(items: ["Tap", "Gesture", "DeepLink", "Notify"])
+        triggerSelector.selectedSegmentIndex = 0
+        self.matrixTriggerSelector = triggerSelector
+
+        let entryLabel = sectionHeader("Entry")
+        let entrySelector = UISegmentedControl(items: ["Internal", "DeepLink", "External", "Restore"])
+        entrySelector.selectedSegmentIndex = 0
+        self.matrixEntrySelector = entrySelector
+
+        let actionLabel = sectionHeader("Action")
+        let actionSelector = UISegmentedControl(items: ["Push", "Pop", "Tab", "Modal", "Replace"])
+        actionSelector.selectedSegmentIndex = 0
+        self.matrixActionSelector = actionSelector
+
+        var fireConfig = UIButton.Configuration.filled()
+        fireConfig.title = "🔥  Trigger Action"
+        fireConfig.baseBackgroundColor = .systemOrange
+        let fireButton = UIButton(configuration: fireConfig)
+        fireButton.addTarget(self, action: #selector(fireMatrixAction), for: .touchUpInside)
+
+        let stack = UIStackView(arrangedSubviews: [
+            triggerLabel, triggerSelector,
+            entryLabel, entrySelector,
+            actionLabel, actionSelector,
+            fireButton
+        ])
+        stack.axis = .vertical
+        stack.spacing = 10
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        
+        card.addSubview(stack)
+        NSLayoutConstraint.activate([
+            stack.topAnchor.constraint(equalTo: card.topAnchor, constant: 12),
+            stack.bottomAnchor.constraint(equalTo: card.bottomAnchor, constant: -12),
+            stack.leadingAnchor.constraint(equalTo: card.leadingAnchor, constant: 12),
+            stack.trailingAnchor.constraint(equalTo: card.trailingAnchor, constant: -12),
+        ])
+        
+        return card
+    }
+
+    private var matrixTriggerSelector: UISegmentedControl?
+    private var matrixEntrySelector: UISegmentedControl?
+    private var matrixActionSelector: UISegmentedControl?
+
+    @objc private func fireMatrixAction() {
+        guard let coordinator = coordinator else { return }
+        
+        // If neither is open, default to opening the one most recently selected or a default
+        // For now, if one is open, we use it. If both are nil, we open UIKit by default.
+        if coordinator.navigationPlaygroundVC == nil && coordinator.swiftUINavCoordinator == nil {
+            coordinator.openNavigationPlayground()
+        }
+        
+        // Delay slightly to allow playground to load if it was just opened
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            guard let self = self else { return }
+            
+            let triggers: [NavTriggerType] = [.userTap, .userGesture, .deepLink, .notification]
+            let entries: [NavEntryType] = [.internalFlow, .deepLink, .external, .restored]
+            
+            let trigger = triggers[self.matrixTriggerSelector?.selectedSegmentIndex ?? 0]
+            let entry = entries[self.matrixEntrySelector?.selectedSegmentIndex ?? 0]
+            let actionIdx = self.matrixActionSelector?.selectedSegmentIndex ?? 0
+            
+            if let navVC = coordinator.navigationPlaygroundVC {
+                // UIKit Flow
+                switch actionIdx {
+                case 0: // Push
+                    self.engine.logManualStep(label: "Matrix Push (UIKit)", trigger: trigger, entry: entry)
+                    navVC.pushLevel()
+                case 1: // Pop
+                    self.engine.logManualStep(label: "Matrix Pop (UIKit)", trigger: trigger, entry: entry)
+                    navVC.popOne()
+                case 2: // Tab
+                    self.engine.logManualStep(label: "Matrix Tab (UIKit)", trigger: trigger, entry: entry)
+                    navVC.simulateTabSwitch()
+                case 3: // Modal
+                    self.engine.logManualStep(label: "Matrix Modal (UIKit)", trigger: trigger, entry: entry)
+                    navVC.presentModal()
+                case 4: // Replace
+                    self.engine.logManualStep(label: "Matrix Replace (UIKit)", trigger: trigger, entry: entry)
+                    navVC.replaceStack()
+                default: break
+                }
+            } else if let swiftNav = coordinator.swiftUINavCoordinator {
+                // SwiftUI Flow
+                switch actionIdx {
+                case 0: // Push
+                    self.engine.logManualStep(label: "Matrix Push (SwiftUI)", trigger: trigger, entry: entry)
+                    swiftNav.push()
+                case 1: // Pop
+                    self.engine.logManualStep(label: "Matrix Pop (SwiftUI)", trigger: trigger, entry: entry)
+                    swiftNav.popOne()
+                case 2: // Tab (Not supported in this SwiftUI playground yet)
+                    self.engine.logManualStep(label: "Matrix Tab (SwiftUI - N/A)", trigger: trigger, entry: entry)
+                case 3: // Modal
+                    self.engine.logManualStep(label: "Matrix Modal (SwiftUI)", trigger: trigger, entry: entry)
+                    swiftNav.presentModal()
+                case 4: // Replace (Not supported in this SwiftUI playground yet)
+                    self.engine.logManualStep(label: "Matrix Replace (SwiftUI - N/A)", trigger: trigger, entry: entry)
+                default: break
+                }
+            }
+        }
     }
 
     private func buildStatusCard() {
@@ -206,6 +321,9 @@ final class ControlPanelViewController: UIViewController {
     private func buildPlaygroundGrid() -> UIView {
         let playgrounds: [(String, String, Selector)] = [
             ("🗺", "Navigation", #selector(openNavigation)),
+            ("🔷", "SwiftUI Nav", #selector(openSwiftUINavigation)),
+            ("⚡️", "API Driven UK", #selector(openAPIDrivenUIKit)),
+            ("🌩", "API Driven SI", #selector(openAPIDrivenSwiftUI)),
             ("👆", "Interaction", #selector(openInteraction)),
             ("🌐", "Network",    #selector(openNetwork)),
             ("♻️", "Lifecycle",  #selector(openLifecycle)),
@@ -287,6 +405,9 @@ final class ControlPanelViewController: UIViewController {
     }
 
     @objc private func openNavigation()  { coordinator?.openNavigationPlayground() }
+    @objc private func openSwiftUINavigation() { coordinator?.openSwiftUINavigationPlayground() }
+    @objc private func openAPIDrivenUIKit()  { coordinator?.openAPIDrivenUIKitPlayground() }
+    @objc private func openAPIDrivenSwiftUI() { coordinator?.openAPIDrivenSwiftUIPlayground() }
     @objc private func openInteraction() { coordinator?.openInteractionPlayground() }
     @objc private func openNetwork()     { coordinator?.openNetworkPlayground() }
     @objc private func openLifecycle()   { coordinator?.openLifecyclePlayground() }

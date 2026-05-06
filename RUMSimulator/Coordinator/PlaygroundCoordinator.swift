@@ -1,5 +1,6 @@
 #if os(iOS)
 import UIKit
+import SwiftUI
 
 // MARK: - PlaygroundCoordinator
 
@@ -17,6 +18,7 @@ import UIKit
 
     weak var navigationPlaygroundVC: UIKitNavPlaygroundVC?
     weak var interactionPlaygroundVC: InteractionPlaygroundVC?
+    weak var swiftUINavCoordinator: SwiftUINavCoordinator?
 
     // MARK: - Init
 
@@ -42,10 +44,34 @@ import UIKit
         navigationController?.pushViewController(vc, animated: true)
     }
 
+    func openSwiftUINavigationPlayground() {
+        let coordinator = SwiftUINavCoordinator(logger: logger)
+        self.swiftUINavCoordinator = coordinator
+        let swiftUIView = SwiftUINavPlayground(coordinator: coordinator)
+        let hostingController = UIHostingController(rootView: swiftUIView)
+        hostingController.title = "SwiftUI Nav"
+        logger.log(type: "navigation", metadata: ["screen": "SwiftUINavigationPlayground", "framework": "SwiftUI"])
+        navigationController?.pushViewController(hostingController, animated: true)
+    }
+
     func openNetworkPlayground() {
         let vc = NetworkPlaygroundVC(networkSimulator: networkSimulator)
         logger.log(type: "navigation", metadata: ["screen": "NetworkPlayground"])
         navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func openAPIDrivenUIKitPlayground() {
+        let vc = APIDrivenLevelViewController(level: 0)
+        logger.log(type: "navigation", metadata: ["screen": "APIDrivenUIKitPlayground"])
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func openAPIDrivenSwiftUIPlayground() {
+        let swiftUIView = APIDrivenSwiftUIPlayground()
+        let hostingController = UIHostingController(rootView: swiftUIView)
+        hostingController.title = "API Driven SwiftUI"
+        logger.log(type: "navigation", metadata: ["screen": "APIDrivenSwiftUIPlayground", "framework": "SwiftUI"])
+        navigationController?.pushViewController(hostingController, animated: true)
     }
 
     func openLifecyclePlayground() {

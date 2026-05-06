@@ -10,6 +10,18 @@ struct ScenarioStep {
     let action: () -> Void
     /// Seconds before the next step fires (modified by speed multiplier)
     let delay: TimeInterval
+    
+    /// Optional navigation metadata
+    let triggerType: NavTriggerType?
+    let entryType: NavEntryType?
+
+    init(label: String, action: @escaping () -> Void, delay: TimeInterval, triggerType: NavTriggerType? = nil, entryType: NavEntryType? = nil) {
+        self.label = label
+        self.action = action
+        self.delay = delay
+        self.triggerType = triggerType
+        self.entryType = entryType
+    }
 }
 
 // MARK: - Scenario

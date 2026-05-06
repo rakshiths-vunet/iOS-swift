@@ -84,6 +84,12 @@ final class AppCoordinator {
 
         // Log app start
         eventLogger.log(type: "lifecycle", metadata: ["event": "app_start"])
+
+        // Observe manual navigation actions
+        NotificationCenter.default.addObserver(forName: Notification.Name("ManualNavAction"), object: nil, queue: .main) { [weak self] note in
+            guard let metadata = note.userInfo as? [String: String] else { return }
+            self?.eventLogger.log(type: "navigation", metadata: metadata)
+        }
     }
 }
 

@@ -22,6 +22,64 @@ final class ModalViewController: UIViewController {
         title = "Modal"
         view.backgroundColor = .systemBackground
         setupUI()
+        setupLoadingOverlay()
+    }
+
+    private let loadingOverlay: UIView = {
+        let v = UIView()
+        v.backgroundColor = UIColor.systemBackground.withAlphaComponent(0.8)
+        v.isHidden = true
+        v.translatesAutoresizingMaskIntoConstraints = false
+        
+        let spinner = UIActivityIndicatorView(style: .large)
+        spinner.startAnimating()
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        
+        let label = UILabel()
+        label.text = "Simulating Latency..."
+        label.font = .systemFont(ofSize: 14)
+        label.textColor = .secondaryLabel
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        v.addSubview(spinner)
+        v.addSubview(label)
+        
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: v.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: v.centerYAnchor, constant: -20),
+            label.topAnchor.constraint(equalTo: spinner.bottomAnchor, constant: 12),
+            label.centerXAnchor.constraint(equalTo: v.centerXAnchor)
+        ])
+        
+        return v
+    }()
+
+    private func setupLoadingOverlay() {
+        view.addSubview(loadingOverlay)
+        NSLayoutConstraint.activate([
+            loadingOverlay.topAnchor.constraint(equalTo: view.topAnchor),
+            loadingOverlay.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            loadingOverlay.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            loadingOverlay.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Simulating rendering delay
+        loadingOverlay.isHidden = false
+        Task {
+            await NavigationLatencyInjector.shared.injectDelay(screenName: "Modal", context: "UIKit Modal viewWillAppear Task")
+            await MainActor.run {
+                UIView.animate(withDuration: 0.3) {
+                    self.loadingOverlay.alpha = 0
+                } completion: { _ in
+                    self.loadingOverlay.isHidden = true
+                    self.loadingOverlay.alpha = 1
+                }
+            }
+        }
     }
 
     private func setupUI() {

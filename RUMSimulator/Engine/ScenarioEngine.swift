@@ -80,11 +80,15 @@ final class ScenarioEngine {
                 self.state.lastStepLabel = step.label
                 step.action()
 
+                var logMetadata = ["label": step.label]
+                if let trigger = step.triggerType { logMetadata["triggerType"] = trigger.rawValue }
+                if let entry = step.entryType { logMetadata["entryType"] = entry.rawValue }
+
                 logger.log(
                     type: "step",
                     scenario: scenario.name,
                     step: index,
-                    metadata: ["label": step.label]
+                    metadata: logMetadata
                 )
 
                 eventCount += 1
@@ -120,6 +124,23 @@ final class ScenarioEngine {
     }
 
     // MARK: - Event rate calculation
+
+    /// Log a step manually (used by the ControlPanel Matrix Trigger)
+    func logManualStep(label: String, trigger: NavTriggerType, entry: NavEntryType) {
+        var logMetadata = ["label": label, "source": "manual_matrix"]
+        logMetadata["triggerType"] = trigger.rawValue
+        logMetadata["entryType"] = entry.rawValue
+        
+        logger.log(
+            type: "step",
+            scenario: "Manual Matrix",
+            step: nil,
+            metadata: logMetadata
+        )
+        
+        self.state.lastStepLabel = label
+        eventCount += 1
+    }
 
     private func startRateTimer() {
         stopRateTimer()

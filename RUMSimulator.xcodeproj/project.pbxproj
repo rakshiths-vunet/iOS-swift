@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09327AA7A7AF4264F92E40C2 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36D0786F3A265263CD6B3 /* NetworkResult.swift */; };
+		0F9DD3201234410BD16CEBD2 /* S7_AdvancedNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A956BD1BFA61AA7E623A4B86 /* S7_AdvancedNavigation.swift */; };
 		144784D32CFB182E53C6FF97 /* PlaygroundCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA33A26DF113D6F334D2B0F7 /* PlaygroundCoordinator.swift */; };
 		14C4BD9B53F04B65E0D37319 /* SwiftUINavPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAA88B2528DA97810FFAA5A /* SwiftUINavPlayground.swift */; };
 		15889BD7172CD514E296F839 /* LogFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E948338B7596F7E43DE87 /* LogFileManager.swift */; };
@@ -16,6 +17,7 @@
 		1F0A840CE297C5760EFEFE0C /* NetworkSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A34359941FA5B1E300E4AF /* NetworkSimulator.swift */; };
 		2A9ECAB041C4427DD58304CC /* S6_MixedLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01812D4BE3BD0837A42AE2FC /* S6_MixedLoad.swift */; };
 		36F72E9665FB369EBCC930A3 /* EngineState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D735883F5E7315B7784CB35 /* EngineState.swift */; };
+		4463EE82C25323CFECC0029A /* S9_SwiftUINavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB059E94AA041F797E3C64FC /* S9_SwiftUINavigation.swift */; };
 		46D9373AF12B62D50DFD13F2 /* ScenarioLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86583711159A8B830708A463 /* ScenarioLibrary.swift */; };
 		4BD095E3B2F1ADFC14FC7B8F /* S3_NetworkStress.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF9035B45CF865C5AA8512E /* S3_NetworkStress.swift */; };
 		4E6BAC2E6E36542A23C04CE1 /* LoadGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784C0B74710B0E77DB033BC1 /* LoadGenerator.swift */; };
@@ -28,7 +30,7 @@
 		7FF25168F571DAF8807FF4F2 /* S5_ColdStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC849FE69657CA8B6D2B1813 /* S5_ColdStart.swift */; };
 		805D27B25B01161DF312D5DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281DB7DB0BA79362A4590C36 /* AppDelegate.swift */; };
 		8C9EC2B46D371B56E19188BA /* HTTPBinEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB47AD1C4FB52264A4F0F111 /* HTTPBinEndpoints.swift */; };
-		90D6D2F22FA9C0EB007977BE /* vuTelemetry in Frameworks */ = {isa = PBXBuildFile; productRef = 90D6D2F12FA9C0EB007977BE /* vuTelemetry */; };
+		90C878EB2FAA5AF2000102E4 /* vuTelemetry in Frameworks */ = {isa = PBXBuildFile; productRef = 90C878EA2FAA5AF2000102E4 /* vuTelemetry */; };
 		997156694A1F4CAF3D551FB3 /* DebugPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFF90580E06F3764A064C6B /* DebugPanelViewModel.swift */; };
 		A4E74449693B4D6DEC278CCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AB55363148003992F62A8EC /* Assets.xcassets */; };
 		B0D3604D6DBC946A78C5B46E /* LogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D2AAA02EFB702A3F299CC0 /* LogEvent.swift */; };
@@ -38,17 +40,21 @@
 		C1C97432A9D097AA2E593742 /* LifecycleObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8595AFF9964CF45BE8F673C /* LifecycleObserver.swift */; };
 		C80928DB6AE28898A464934A /* GestureSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FDCE01D8C796422EE13E2C /* GestureSimulator.swift */; };
 		C9A0E82FB0FE22EC5804A596 /* CrashPlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE87B1ECC8A0391F72EE1100 /* CrashPlaygroundVC.swift */; };
+		D5F872EDE46C43E27D835C67 /* S8_ExhaustiveMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813DA4A68F3F0D53ABA653A /* S8_ExhaustiveMetadata.swift */; };
 		DE19361F82FFC9A70B0CAC99 /* S4_SessionRestart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18706362B6E85EBEABD7378 /* S4_SessionRestart.swift */; };
 		DE50E9A3ABAEEC1D1B0D9167 /* ControlPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DB99AEF222C7B2504822B /* ControlPanelViewModel.swift */; };
 		DF23B5D78E1B48CD931B0F23 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6467CEA6F4F73F2D107620 /* AppCoordinator.swift */; };
 		DFDB35B4F02979CD04CEEFDE /* LifecyclePlaygroundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642B32CB5ABFC3348FC047A0 /* LifecyclePlaygroundVC.swift */; };
 		EA0AA30AC3124E2C81B964B6 /* S2_RapidInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE80C1F3A8B8D60BFE3A0F6 /* S2_RapidInteraction.swift */; };
+		EFC4C1E3B51C05C27E83D1E5 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7BD03F3599AB84E36749A4 /* Theme.swift */; };
 		F249CCCA2CB60B568263A6DC /* ScenarioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D045B0E9DFE4E9D0062024 /* ScenarioEngine.swift */; };
+		F3F252F23430BA49501440B0 /* NavigationTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A563104477FC979003170B /* NavigationTypes.swift */; };
 		FFC492DDC09590BCD6145FFE /* Scenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3CA61024A6E6C1D3D7E5B9 /* Scenario.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01812D4BE3BD0837A42AE2FC /* S6_MixedLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S6_MixedLoad.swift; path = Scenarios/S6_MixedLoad.swift; sourceTree = "<group>"; };
+		1813DA4A68F3F0D53ABA653A /* S8_ExhaustiveMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S8_ExhaustiveMetadata.swift; path = Scenarios/S8_ExhaustiveMetadata.swift; sourceTree = "<group>"; };
 		1AA4A39B5A2EC711CEB77AAC /* EventLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventLogger.swift; path = Logging/EventLogger.swift; sourceTree = "<group>"; };
 		1AA744ED73BF42DE0F959D92 /* LogViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogViewerViewController.swift; path = Logging/LogViewerViewController.swift; sourceTree = "<group>"; };
 		1C6467CEA6F4F73F2D107620 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppCoordinator.swift; path = Coordinator/AppCoordinator.swift; sourceTree = "<group>"; };
@@ -58,7 +64,9 @@
 		45FDCE01D8C796422EE13E2C /* GestureSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GestureSimulator.swift; path = Screens/Interaction/GestureSimulator.swift; sourceTree = "<group>"; };
 		4C7B44E1294F48DF9169D8AE /* NavLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavLevelViewController.swift; path = Screens/Navigation/NavLevelViewController.swift; sourceTree = "<group>"; };
 		5141EFFF35ACD6C51F274E4D /* RUMSimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RUMSimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		51A563104477FC979003170B /* NavigationTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationTypes.swift; path = Engine/NavigationTypes.swift; sourceTree = "<group>"; };
 		51D2AAA02EFB702A3F299CC0 /* LogEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogEvent.swift; path = Logging/LogEvent.swift; sourceTree = "<group>"; };
+		5E7BD03F3599AB84E36749A4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = Resources/Theme.swift; sourceTree = "<group>"; };
 		642B32CB5ABFC3348FC047A0 /* LifecyclePlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LifecyclePlaygroundVC.swift; path = Screens/Lifecycle/LifecyclePlaygroundVC.swift; sourceTree = "<group>"; };
 		682DE2FCCAAA7987D9858E50 /* InteractionPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InteractionPlaygroundVC.swift; path = Screens/Interaction/InteractionPlaygroundVC.swift; sourceTree = "<group>"; };
 		70D045B0E9DFE4E9D0062024 /* ScenarioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScenarioEngine.swift; path = Engine/ScenarioEngine.swift; sourceTree = "<group>"; };
@@ -73,6 +81,7 @@
 		9CE80C1F3A8B8D60BFE3A0F6 /* S2_RapidInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S2_RapidInteraction.swift; path = Scenarios/S2_RapidInteraction.swift; sourceTree = "<group>"; };
 		A40DB99AEF222C7B2504822B /* ControlPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ControlPanelViewModel.swift; path = Screens/ControlPanel/ControlPanelViewModel.swift; sourceTree = "<group>"; };
 		A5FB6A985C494FDFE7CA66AC /* ControlPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ControlPanelViewController.swift; path = Screens/ControlPanel/ControlPanelViewController.swift; sourceTree = "<group>"; };
+		A956BD1BFA61AA7E623A4B86 /* S7_AdvancedNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S7_AdvancedNavigation.swift; path = Scenarios/S7_AdvancedNavigation.swift; sourceTree = "<group>"; };
 		AA33A26DF113D6F334D2B0F7 /* PlaygroundCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaygroundCoordinator.swift; path = Coordinator/PlaygroundCoordinator.swift; sourceTree = "<group>"; };
 		BC849FE69657CA8B6D2B1813 /* S5_ColdStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S5_ColdStart.swift; path = Scenarios/S5_ColdStart.swift; sourceTree = "<group>"; };
 		BE87B1ECC8A0391F72EE1100 /* CrashPlaygroundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CrashPlaygroundVC.swift; path = Screens/CrashError/CrashPlaygroundVC.swift; sourceTree = "<group>"; };
@@ -84,6 +93,7 @@
 		DF3CA61024A6E6C1D3D7E5B9 /* Scenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Scenario.swift; path = Engine/Scenario.swift; sourceTree = "<group>"; };
 		DFAA88B2528DA97810FFAA5A /* SwiftUINavPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftUINavPlayground.swift; path = Screens/Navigation/SwiftUINavPlayground.swift; sourceTree = "<group>"; };
 		E8595AFF9964CF45BE8F673C /* LifecycleObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LifecycleObserver.swift; path = Lifecycle/LifecycleObserver.swift; sourceTree = "<group>"; };
+		EB059E94AA041F797E3C64FC /* S9_SwiftUINavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = S9_SwiftUINavigation.swift; path = Scenarios/S9_SwiftUINavigation.swift; sourceTree = "<group>"; };
 		FB47AD1C4FB52264A4F0F111 /* HTTPBinEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPBinEndpoints.swift; path = Network/HTTPBinEndpoints.swift; sourceTree = "<group>"; };
 		FBFF90580E06F3764A064C6B /* DebugPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugPanelViewModel.swift; path = Screens/DebugPanel/DebugPanelViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,7 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90D6D2F22FA9C0EB007977BE /* vuTelemetry in Frameworks */,
+				90C878EB2FAA5AF2000102E4 /* vuTelemetry in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +153,9 @@
 				C18706362B6E85EBEABD7378 /* S4_SessionRestart.swift */,
 				BC849FE69657CA8B6D2B1813 /* S5_ColdStart.swift */,
 				01812D4BE3BD0837A42AE2FC /* S6_MixedLoad.swift */,
+				A956BD1BFA61AA7E623A4B86 /* S7_AdvancedNavigation.swift */,
+				1813DA4A68F3F0D53ABA653A /* S8_ExhaustiveMetadata.swift */,
+				EB059E94AA041F797E3C64FC /* S9_SwiftUINavigation.swift */,
 			);
 			name = Scenarios;
 			sourceTree = "<group>";
@@ -209,6 +222,7 @@
 		B642DCC00EC1A184662227C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5E7BD03F3599AB84E36749A4 /* Theme.swift */,
 				7AB55363148003992F62A8EC /* Assets.xcassets */,
 			);
 			name = Resources;
@@ -256,6 +270,7 @@
 			children = (
 				2D735883F5E7315B7784CB35 /* EngineState.swift */,
 				784C0B74710B0E77DB033BC1 /* LoadGenerator.swift */,
+				51A563104477FC979003170B /* NavigationTypes.swift */,
 				DF3CA61024A6E6C1D3D7E5B9 /* Scenario.swift */,
 				70D045B0E9DFE4E9D0062024 /* ScenarioEngine.swift */,
 				86583711159A8B830708A463 /* ScenarioLibrary.swift */,
@@ -324,7 +339,7 @@
 			);
 			mainGroup = 0A85897F1A32FE9B91C081CD;
 			packageReferences = (
-				90D6D2F02FA9C0EB007977BE /* XCLocalSwiftPackageReference "../vuTelemetry-iOS" */,
+				90C878E92FAA5AF2000102E4 /* XCLocalSwiftPackageReference "../vuTelemetry-iOS" */,
 			);
 			productRefGroup = B88D7E26791946AEFDCC8BB7 /* Products */;
 			projectDirPath = "";
@@ -355,38 +370,43 @@
 				5AD0989546BECD195A143022 /* SceneDelegate.swift in Sources */,
 				DF23B5D78E1B48CD931B0F23 /* AppCoordinator.swift in Sources */,
 				144784D32CFB182E53C6FF97 /* PlaygroundCoordinator.swift in Sources */,
-				36F72E9665FB369EBCC930A3 /* EngineState.swift in Sources */,
-				4E6BAC2E6E36542A23C04CE1 /* LoadGenerator.swift in Sources */,
-				FFC492DDC09590BCD6145FFE /* Scenario.swift in Sources */,
-				F249CCCA2CB60B568263A6DC /* ScenarioEngine.swift in Sources */,
-				46D9373AF12B62D50DFD13F2 /* ScenarioLibrary.swift in Sources */,
+				EFC4C1E3B51C05C27E83D1E5 /* Theme.swift in Sources */,
+				8C9EC2B46D371B56E19188BA /* HTTPBinEndpoints.swift in Sources */,
+				09327AA7A7AF4264F92E40C2 /* NetworkResult.swift in Sources */,
+				1F0A840CE297C5760EFEFE0C /* NetworkSimulator.swift in Sources */,
+				C1C97432A9D097AA2E593742 /* LifecycleObserver.swift in Sources */,
+				64A907C0F3DC8E0BD34EB524 /* ControlPanelViewController.swift in Sources */,
+				DE50E9A3ABAEEC1D1B0D9167 /* ControlPanelViewModel.swift in Sources */,
+				C9A0E82FB0FE22EC5804A596 /* CrashPlaygroundVC.swift in Sources */,
+				16CFC85C6E24C3A36FE2D317 /* NetworkPlaygroundVC.swift in Sources */,
+				DFDB35B4F02979CD04CEEFDE /* LifecyclePlaygroundVC.swift in Sources */,
 				6BE6B7341D38FA74936DD10F /* ModalViewController.swift in Sources */,
 				B9E065077C06DF9A0B6CA144 /* NavLevelViewController.swift in Sources */,
 				14C4BD9B53F04B65E0D37319 /* SwiftUINavPlayground.swift in Sources */,
 				BC52D28E4F05615D759CCF95 /* UIKitNavPlaygroundVC.swift in Sources */,
-				C9A0E82FB0FE22EC5804A596 /* CrashPlaygroundVC.swift in Sources */,
 				1D2DA5C6B852BAECC5742EE4 /* DebugPanelViewController.swift in Sources */,
 				997156694A1F4CAF3D551FB3 /* DebugPanelViewModel.swift in Sources */,
-				16CFC85C6E24C3A36FE2D317 /* NetworkPlaygroundVC.swift in Sources */,
 				C80928DB6AE28898A464934A /* GestureSimulator.swift in Sources */,
 				6B0689FFB810E18276BCE26A /* InteractionPlaygroundVC.swift in Sources */,
-				DFDB35B4F02979CD04CEEFDE /* LifecyclePlaygroundVC.swift in Sources */,
-				64A907C0F3DC8E0BD34EB524 /* ControlPanelViewController.swift in Sources */,
-				DE50E9A3ABAEEC1D1B0D9167 /* ControlPanelViewModel.swift in Sources */,
-				BA78DC3D99803BCE101BB7CB /* EventLogger.swift in Sources */,
-				B0D3604D6DBC946A78C5B46E /* LogEvent.swift in Sources */,
-				15889BD7172CD514E296F839 /* LogFileManager.swift in Sources */,
-				6133C7CF22809EE4FCC77D90 /* LogViewerViewController.swift in Sources */,
-				8C9EC2B46D371B56E19188BA /* HTTPBinEndpoints.swift in Sources */,
-				09327AA7A7AF4264F92E40C2 /* NetworkResult.swift in Sources */,
-				1F0A840CE297C5760EFEFE0C /* NetworkSimulator.swift in Sources */,
 				5DE7E98CE53B97A96BF1F34D /* S1_BasicNavigation.swift in Sources */,
 				EA0AA30AC3124E2C81B964B6 /* S2_RapidInteraction.swift in Sources */,
 				4BD095E3B2F1ADFC14FC7B8F /* S3_NetworkStress.swift in Sources */,
 				DE19361F82FFC9A70B0CAC99 /* S4_SessionRestart.swift in Sources */,
 				7FF25168F571DAF8807FF4F2 /* S5_ColdStart.swift in Sources */,
 				2A9ECAB041C4427DD58304CC /* S6_MixedLoad.swift in Sources */,
-				C1C97432A9D097AA2E593742 /* LifecycleObserver.swift in Sources */,
+				0F9DD3201234410BD16CEBD2 /* S7_AdvancedNavigation.swift in Sources */,
+				D5F872EDE46C43E27D835C67 /* S8_ExhaustiveMetadata.swift in Sources */,
+				4463EE82C25323CFECC0029A /* S9_SwiftUINavigation.swift in Sources */,
+				36F72E9665FB369EBCC930A3 /* EngineState.swift in Sources */,
+				4E6BAC2E6E36542A23C04CE1 /* LoadGenerator.swift in Sources */,
+				F3F252F23430BA49501440B0 /* NavigationTypes.swift in Sources */,
+				FFC492DDC09590BCD6145FFE /* Scenario.swift in Sources */,
+				F249CCCA2CB60B568263A6DC /* ScenarioEngine.swift in Sources */,
+				46D9373AF12B62D50DFD13F2 /* ScenarioLibrary.swift in Sources */,
+				BA78DC3D99803BCE101BB7CB /* EventLogger.swift in Sources */,
+				B0D3604D6DBC946A78C5B46E /* LogEvent.swift in Sources */,
+				15889BD7172CD514E296F839 /* LogFileManager.swift in Sources */,
+				6133C7CF22809EE4FCC77D90 /* LogViewerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,14 +521,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		90D6D2F02FA9C0EB007977BE /* XCLocalSwiftPackageReference "../vuTelemetry-iOS" */ = {
+		90C878E92FAA5AF2000102E4 /* XCLocalSwiftPackageReference "../vuTelemetry-iOS" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = "../vuTelemetry-iOS";
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		90D6D2F12FA9C0EB007977BE /* vuTelemetry */ = {
+		90C878EA2FAA5AF2000102E4 /* vuTelemetry */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = vuTelemetry;
 		};
