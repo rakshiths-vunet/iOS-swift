@@ -1,6 +1,7 @@
 #if os(iOS)
 import UIKit
 import vuTelemetry
+import ChaosKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -11,6 +12,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        // Register Header Inspector
+        URLProtocol.registerClass(HeaderInspectorProtocol.self)
+        
         // SDK link point: auto-instrumentation SDK is linked here but never called explicitly.
         // All telemetry must come from UIKit/URLSession/OS lifecycle auto-capture only.
 
@@ -23,6 +27,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppLifecycleTracker.shared.startTracking()
         UIKitTracker.shared.observeViewControllers()
         
+        
+        
+        
+        ChaosKit.configure(GlobalConfig(
+            enabled: true,
+            maxIntensity: 1.0,
+            safeMode: true,
+            controlPlane: .webSocket(url: URL(string: "ws://10.1.93.235:8765")!, authToken: nil),
+            logLevel: .verbose
+        ))
+
+        ChaosKit.start()
+
         return true
     }
 

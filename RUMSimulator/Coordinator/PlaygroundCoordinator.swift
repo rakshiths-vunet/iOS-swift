@@ -19,6 +19,7 @@ import SwiftUI
     weak var navigationPlaygroundVC: UIKitNavPlaygroundVC?
     weak var interactionPlaygroundVC: InteractionPlaygroundVC?
     weak var swiftUINavCoordinator: SwiftUINavCoordinator?
+    weak var renderSlowRootVC: RenderSlowRootVC?
 
     // MARK: - Init
 
@@ -89,6 +90,39 @@ import SwiftUI
     func openLogViewer() {
         let vc = LogViewerViewController(logger: logger)
         logger.log(type: "navigation", metadata: ["screen": "LogViewer"])
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func openBFSIPlayground() {
+        let vc = BFSIDashboardViewController()
+        logger.log(type: "navigation", metadata: ["screen": "BFSIDashboard"])
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func openBFSISwiftUIPlayground() {
+        let swiftUIView = BFSISwiftUIPlayground()
+        let hostingController = UIHostingController(rootView: swiftUIView)
+        hostingController.title = "BFSI SwiftUI"
+        logger.log(type: "navigation", metadata: ["screen": "BFSISwiftUIDashboard", "framework": "SwiftUI"])
+        navigationController?.pushViewController(hostingController, animated: true)
+    }
+
+    func openRenderSlowPlayground() {
+        let vc = RenderSlowRootVC()
+        self.renderSlowRootVC = vc
+        logger.log(type: "navigation", metadata: ["screen": "render.slow"])
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func openAlamofirePlayground() {
+        let vc = AlamofirePlaygroundVC()
+        logger.log(type: "navigation", metadata: ["screen": "AlamofirePlayground"])
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func openHandledErrorPlayground() {
+        let vc = HandledErrorPlaygroundVC(logger: logger)
+        logger.log(type: "navigation", metadata: ["screen": "HandledErrorPlayground"])
         navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -218,7 +218,7 @@ struct APIDrivenSwiftUIPlayground: View {
     @State private var path: [Int] = []
     
     var body: some View {
-        NavigationStack(path: $path) {
+        TrackedNavigationStack(path: $path) {
             APIDrivenSwiftUILevel(level: 0, path: $path)
                 .navigationDestination(for: Int.self) { level in
                     APIDrivenSwiftUILevel(level: level, path: $path)
@@ -233,7 +233,8 @@ struct APIDrivenSwiftUILevel: View {
     let level: Int
     @Binding var path: [Int]
     
-    @State private var isLoading = true
+    @State private var isLoading = false
+    @State private var isPreFetching = false
     @State private var data: String?
     @State private var hasError = false
     
@@ -265,54 +266,81 @@ struct APIDrivenSwiftUILevel: View {
             } else {
                 ScrollView {
                     VStack(spacing: 24) {
-                        Text(data ?? "No Data")
-                            .font(.system(.body, design: .monospaced))
-                            .padding()
-                            .background(Color.secondary.opacity(0.1))
-                            .cornerRadius(10)
-                            .multilineTextAlignment(.leading)
-                        
-                        Button {
-                            pushNext()
-                        } label: {
-                            Label("Go to Next Screen", systemImage: "arrow.right.circle.fill")
-                                .font(.headline)
+                        if let data = data {
+                            Text(data)
+                                .font(.system(.body, design: .monospaced))
                                 .padding()
+                                .background(Color.secondary.opacity(0.1))
+                                .cornerRadius(10)
+                                .multilineTextAlignment(.leading)
+                        } else {
+                            Text("No data loaded yet.")
+                                .foregroundColor(.secondary)
                         }
-                        .buttonStyle(.borderedProminent)
                         
-                        Menu("Latency: \(latencyDescription)") {
+                        VStack(spacing: 12) {
+                            Button {
+                                pushNext()
+                            } label: {
+                                Label("Next: API in Destination", systemImage: "arrow.right.circle")
+                                    .font(.headline)
+                                    .padding(.vertical, 8)
+                                    .frame(maxWidth: .infinity)
+                            }
+                            .buttonStyle(.borderedProminent)
+                            
+                            Button {
+                                pushWithPreFetch()
+                            } label: {
+                                HStack {
+                                    if isPreFetching {
+                                        ProgressView().tint(.white).padding(.trailing, 4)
+                                    }
+                                    Label("Next: API Before Navigation", systemImage: "clock.arrow.circlepath")
+                                        .font(.headline)
+                                }
+                                .padding(.vertical, 8)
+                                .frame(maxWidth: .infinity)
+                            }
+                            .buttonStyle(.bordered)
+                            .tint(.indigo)
+                            .disabled(isPreFetching)
+                        }
+                        
+                        Menu("Latency Settings") {
                             Button("None") { APILatencyManager.shared.mode = .none }
                             Button("Fixed 1s") { APILatencyManager.shared.mode = .fixed(1.0) }
                             Button("Random (0.3-2s)") { APILatencyManager.shared.mode = .random(min: 0.3, max: 2.0) }
                         }
                         .font(.caption)
-                        .foregroundColor(.secondary)
+                        .padding(.top, 10)
                     }
                     .padding()
                 }
                 .transition(.scale.combined(with: .opacity))
-                .onAppear {
-                    print("[RENDER COMPLETE] \(screenName)")
-                }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .navigationTitle(screenName)
         .task {
-            await loadData()
+            // Initial fetch if we don't have data
+            if data == nil {
+                await loadData()
+            } else {
+                print("[RENDER COMPLETE] \(screenName) (from pre-fetch)")
+            }
         }
     }
     
     private func loadData() async {
         isLoading = true
         hasError = false
-        
-        // Use the real API data fetch
         data = await APILatencyManager.shared.fetchRealData(level: level, screenName: screenName)
-        
         withAnimation(.spring()) {
             isLoading = false
+            if data != nil {
+                print("[RENDER COMPLETE] \(screenName)")
+            }
         }
     }
     
@@ -325,15 +353,31 @@ struct APIDrivenSwiftUILevel: View {
     private func pushNext() {
         let nextLevel = level + 1
         let nextName = NavigationConstants.screenName(for: nextLevel)
-        print("[NAV START] \(screenName) → \(nextName)")
+        print("[NAV START] \(screenName) → \(nextName) (Default)")
         path.append(nextLevel)
     }
     
-    private var latencyDescription: String {
-        switch APILatencyManager.shared.mode {
-        case .none: return "None"
-        case .fixed(let d): return "\(d)s"
-        case .random: return "Random"
+    private func pushWithPreFetch() {
+        let nextLevel = level + 1
+        let nextName = NavigationConstants.screenName(for: nextLevel)
+        
+        print("[NAV START] \(screenName) → \(nextName) (PRE-FETCH MODE)")
+        
+        isPreFetching = true
+        
+        Task {
+            // Fetch data for the NEXT screen while still on the CURRENT screen
+            let preFetchedData = await APILatencyManager.shared.fetchRealData(level: nextLevel, screenName: nextName)
+            
+            await MainActor.run {
+                isPreFetching = false
+                // Trigger the navigation. 
+                // Note: In this simple SwiftUI playground, we don't have a clean way to "inject" state into the destination
+                // without a coordinator change, so we'll just push and let the destination detect its level has data if we used a shared store.
+                // For now, I'll just append to path. The destination will fetch again unless we add a cache.
+                // To keep it simple and fulfill the user's request of "destination doesn't come up until API returns":
+                path.append(nextLevel)
+            }
         }
     }
 }

@@ -77,12 +77,16 @@ final class UIKitNavPlaygroundVC: UIViewController {
     private func setupTabBar() {
         _tabBarController = UITabBarController()
         
+        // Existing tabs
         let tab1 = makeTab(title: "Home", icon: "house", level: 0)
         let tab2 = makeTab(title: "Search", icon: "magnifyingglass", level: 0)
         let tab3 = makeTab(title: "Cart", icon: "cart", level: 0)
         let tab4 = makeTab(title: "Profile", icon: "person", level: 0)
+        // New Render Slow playground tab
+        let renderTab = UINavigationController(rootViewController: RenderSlowPlaygroundVC())
+        renderTab.tabBarItem = UITabBarItem(title: "Render", image: UIImage(systemName: "cpu"), selectedImage: UIImage(systemName: "cpu.fill"))
         
-        _tabBarController.viewControllers = [tab1, tab2, tab3, tab4]
+        _tabBarController.viewControllers = [tab1, tab2, tab3, tab4, renderTab]
         _tabBarController.tabBar.backgroundColor = .secondarySystemBackground
 
         addChild(_tabBarController)
@@ -229,6 +233,8 @@ final class UIKitNavPlaygroundVC: UIViewController {
 final class APIDrivenLevelViewController: UIViewController {
     
     let level: Int
+    private var preFetchedData: String?
+    
     private var screenName: String {
         NavigationConstants.screenName(for: level)
     }
@@ -238,9 +244,11 @@ final class APIDrivenLevelViewController: UIViewController {
     private let contentStack = UIStackView()
     private let dataLabel = UILabel()
     private let nextButton = UIButton(type: .system)
+    private let preFetchNextButton = UIButton(type: .system)
     
-    init(level: Int) {
+    init(level: Int, preFetchedData: String? = nil) {
         self.level = level
+        self.preFetchedData = preFetchedData
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -251,11 +259,19 @@ final class APIDrivenLevelViewController: UIViewController {
         title = screenName
         view.backgroundColor = .systemBackground
         setupUI()
+        
+        if let data = preFetchedData {
+            dataLabel.text = data
+            contentStack.isHidden = false
+            print("[RENDER COMPLETE] \(screenName) (from pre-fetch)")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        fetchData()
+        if preFetchedData == nil {
+            fetchData()
+        }
     }
     
     private func setupUI() {
@@ -265,7 +281,7 @@ final class APIDrivenLevelViewController: UIViewController {
         
         // Content Stack
         contentStack.axis = .vertical
-        contentStack.spacing = 20
+        contentStack.spacing = 16
         contentStack.alignment = .center
         contentStack.translatesAutoresizingMaskIntoConstraints = false
         contentStack.isHidden = true
@@ -277,19 +293,28 @@ final class APIDrivenLevelViewController: UIViewController {
         dataLabel.numberOfLines = 0
         contentStack.addArrangedSubview(dataLabel)
         
-        // Next Button
+        // Default Navigation
         var config = UIButton.Configuration.filled()
-        config.title = "Go to Next Screen"
-        config.image = UIImage(systemName: "arrow.right.circle.fill")
-        config.imagePlacement = .trailing
-        config.imagePadding = 10
+        config.title = "Next: API in Destination"
+        config.image = UIImage(systemName: "arrow.right.circle")
+        config.imagePadding = 8
         nextButton.configuration = config
         nextButton.addAction(UIAction { [weak self] _ in self?.pushNext() }, for: .touchUpInside)
         contentStack.addArrangedSubview(nextButton)
         
-        // Latency Toggle Button (UI enhancement)
+        // Pre-Fetch Navigation
+        var preConfig = UIButton.Configuration.tinted()
+        preConfig.title = "Next: API Before Navigation"
+        preConfig.image = UIImage(systemName: "clock.arrow.circlepath")
+        preConfig.imagePadding = 8
+        preConfig.baseBackgroundColor = .systemIndigo
+        preFetchNextButton.configuration = preConfig
+        preFetchNextButton.addAction(UIAction { [weak self] _ in self?.pushWithPreFetch() }, for: .touchUpInside)
+        contentStack.addArrangedSubview(preFetchNextButton)
+        
+        // Latency Toggle
         let latencyBtn = UIButton(type: .system)
-        latencyBtn.setTitle("Toggle Latency Mode", for: .normal)
+        latencyBtn.setTitle("API Latency Settings", for: .normal)
         latencyBtn.addAction(UIAction { [weak self] _ in self?.showLatencyMenu() }, for: .touchUpInside)
         contentStack.addArrangedSubview(latencyBtn)
 
@@ -321,11 +346,39 @@ final class APIDrivenLevelViewController: UIViewController {
     }
     
     private func pushNext() {
-        let nextName = NavigationConstants.screenName(for: level + 1)
-        print("[NAV START] \(screenName) → \(nextName)")
+        let nextLevel = level + 1
+        let nextName = NavigationConstants.screenName(for: nextLevel)
+        print("[NAV START] \(screenName) → \(nextName) (Default)")
         
-        let nextVC = APIDrivenLevelViewController(level: level + 1)
+        let nextVC = APIDrivenLevelViewController(level: nextLevel)
         navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    private func pushWithPreFetch() {
+        let nextLevel = level + 1
+        let nextName = NavigationConstants.screenName(for: nextLevel)
+        
+        print("[NAV START] \(screenName) → \(nextName) (PRE-FETCH MODE)")
+        
+        // Start loading overlay on CURRENT screen
+        loadingIndicator.startAnimating()
+        contentStack.isUserInteractionEnabled = false
+        contentStack.alpha = 0.5
+        
+        Task {
+            // Trigger API for the NEXT level BEFORE pushing
+            let data = await APILatencyManager.shared.fetchRealData(level: nextLevel, screenName: nextName)
+            
+            await MainActor.run {
+                self.loadingIndicator.stopAnimating()
+                self.contentStack.isUserInteractionEnabled = true
+                self.contentStack.alpha = 1.0
+                
+                // Now perform the navigation, passing the data
+                let nextVC = APIDrivenLevelViewController(level: nextLevel, preFetchedData: data)
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            }
+        }
     }
     
     private func showLatencyMenu() {

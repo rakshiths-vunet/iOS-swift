@@ -15,6 +15,11 @@ final class NetworkSimulator {
         self.debugState = debugState
         self.logger = logger
     }
+    
+    private lazy var customSession: URLSession = {
+        let config = URLSessionConfiguration.default
+        return URLSession(configuration: config, delegate: HeaderInspectorSessionDelegate(), delegateQueue: nil)
+    }()
 
     // MARK: - Single request
 
@@ -63,8 +68,13 @@ final class NetworkSimulator {
         var request = URLRequest(url: url)
         request.timeoutInterval = 15
 
+        // Request Hook: Manual inspection
+        if let headers = request.allHTTPHeaderFields {
+            print("🔍 [Request Hook] Outgoing Headers (\(url.absoluteString)): \(headers)")
+        }
+
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await customSession.data(for: request)
             guard let http = response as? HTTPURLResponse else {
                 return .unknownError(NSError(domain: "RUMSimulator", code: -1, userInfo: [NSLocalizedDescriptionKey: "Non-HTTP response"]))
             }

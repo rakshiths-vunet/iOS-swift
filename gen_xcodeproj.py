@@ -65,11 +65,16 @@ PRODUCTS_GROUP  = pbx_id("PRODUCTS_GROUP")
 SRC_GROUP_ID    = pbx_id("SRC_GROUP")
 
 APP_PRODUCT_REF = pbx_id("APP_PRODUCT")
+VU_TELEMETRY_PKG_REF = pbx_id("VU_TELEMETRY_PKG")
+VU_TELEMETRY_PROD_REF = pbx_id("VU_TELEMETRY_PROD")
 
 # File refs
 def file_ref_id(path):    return pbx_id("FILEREF_" + path)
 def build_file_id(path):  return pbx_id("BUILDFILE_" + path)
 def group_id(path):       return pbx_id("GROUP_" + path)
+
+ALAMOFIRE_PKG_REF = pbx_id("ALAMOFIRE_PKG")
+ALAMOFIRE_PROD_REF = pbx_id("ALAMOFIRE_PROD")
 
 # ── Build file entries ───────────────────────────────────────────────────────
 
@@ -297,6 +302,10 @@ def pbx_native_target():
 \t\t\tdependencies = (
 \t\t\t);
 \t\t\tname = {PROJ_NAME};
+\t\t\tpackageProductDependencies = (
+\t\t\t\t{VU_TELEMETRY_PROD_REF} /* vuTelemetry */,
+\t\t\t\t{ALAMOFIRE_PROD_REF} /* Alamofire */,
+\t\t\t);
 \t\t\tproductName = {PROJ_NAME};
 \t\t\tproductReference = {APP_PRODUCT_REF} /* {PROJ_NAME}.app */;
 \t\t\tproductType = "com.apple.product-type.application";
@@ -327,6 +336,10 @@ def pbx_project():
 \t\t\t\tBase,
 \t\t\t);
 \t\t\tmainGroup = {MAIN_GROUP_ID};
+\t\t\tpackageReferences = (
+\t\t\t\t{VU_TELEMETRY_PKG_REF} /* vuTelemetry */,
+\t\t\t\t{ALAMOFIRE_PKG_REF} /* Alamofire */,
+\t\t\t);
 \t\t\tproductRefGroup = {PRODUCTS_GROUP} /* Products */;
 \t\t\tprojectDirPath = "";
 \t\t\tprojectRoot = "";
@@ -462,6 +475,27 @@ def pbx_config_lists():
 \t\t}};
 /* End XCConfigurationList section */"""
 
+def pbx_packages():
+    return f"""/* Begin XCLocalSwiftPackageReference section */
+		{VU_TELEMETRY_PKG_REF} /* vuTelemetry */ = {{isa = XCLocalSwiftPackageReference; relativePath = ../vuTelemetry-iOS; }};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		{ALAMOFIRE_PKG_REF} /* XCRemoteSwiftPackageReference "Alamofire" */ = {{
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {{
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.0;
+			}};
+		}};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		{VU_TELEMETRY_PROD_REF} /* vuTelemetry */ = {{isa = XCSwiftPackageProductDependency; package = {VU_TELEMETRY_PKG_REF} /* vuTelemetry */; productName = vuTelemetry; }};
+		{ALAMOFIRE_PROD_REF} /* Alamofire */ = {{isa = XCSwiftPackageProductDependency; package = {ALAMOFIRE_PKG_REF} /* XCRemoteSwiftPackageReference "Alamofire" */; productName = Alamofire; }};
+/* End XCSwiftPackageProductDependency section */"""
+
 # ── Assemble ─────────────────────────────────────────────────────────────────
 
 pbxproj = f"""// !$*UTF8*$!
@@ -491,6 +525,8 @@ pbxproj = f"""// !$*UTF8*$!
 {pbx_build_configurations()}
 
 {pbx_config_lists()}
+
+{pbx_packages()}
 
 \t}};
 \trootObject = {PROJECT_ID} /* Project object */;

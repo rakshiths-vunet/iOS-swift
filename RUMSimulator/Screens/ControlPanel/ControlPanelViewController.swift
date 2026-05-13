@@ -328,7 +328,12 @@ final class ControlPanelViewController: UIViewController {
             ("🌐", "Network",    #selector(openNetwork)),
             ("♻️", "Lifecycle",  #selector(openLifecycle)),
             ("💥", "Crash",      #selector(openCrash)),
+            ("🏦", "BFSI Banking",#selector(openBFSI)),
+            ("💰", "BFSI SwiftUI",#selector(openBFSISwiftUI)),
             ("📋", "Log Viewer", #selector(openLogViewer)),
+            ("⏱", "Render Slow", #selector(openRenderSlow)),
+            ("🚀", "Alamofire",    #selector(openAlamofire)),
+            ("🛠", "Handled Error", #selector(openHandledError)),
         ]
 
         let grid = UIStackView()
@@ -412,7 +417,12 @@ final class ControlPanelViewController: UIViewController {
     @objc private func openNetwork()     { coordinator?.openNetworkPlayground() }
     @objc private func openLifecycle()   { coordinator?.openLifecyclePlayground() }
     @objc private func openCrash()       { coordinator?.openCrashPlayground() }
+    @objc private func openBFSI()        { coordinator?.openBFSIPlayground() }
+    @objc private func openBFSISwiftUI() { coordinator?.openBFSISwiftUIPlayground() }
     @objc private func openLogViewer()   { coordinator?.openLogViewer() }
+    @objc private func openRenderSlow()  { coordinator?.openRenderSlowPlayground() }
+    @objc private func openAlamofire()    { coordinator?.openAlamofirePlayground() }
+    @objc private func openHandledError() { coordinator?.openHandledErrorPlayground() }
 
     // MARK: - Debug Panel
 
